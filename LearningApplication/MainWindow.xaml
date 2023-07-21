@@ -26,7 +26,6 @@
                 <MenuItem Header="Edytuj słownik" />
                 <MenuItem Header="Usuń słownik" />
             </MenuItem>
-            
             <MenuItem Header="Statystyki">
                 <MenuItem Header="Przeglądaj statystyki" />
                 <MenuItem Header="Usuń statystykę" />
