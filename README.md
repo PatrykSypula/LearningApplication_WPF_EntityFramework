@@ -1,2 +1,2 @@
-# Desktop application to learn Engligh.
+# Desktop application to learn English.
 # Made in WPF with EntityFrameworkCore.
