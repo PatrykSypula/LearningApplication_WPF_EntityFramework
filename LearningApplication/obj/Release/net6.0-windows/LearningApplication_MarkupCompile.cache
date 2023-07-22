@@ -10,11 +10,11 @@ none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
 C:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\App.xaml
-2-646283340
+31616825398
 
-11-936752442
+14-690123991
 225-406134218
-Views\ChooseDictionaryWindow.xaml;Views\MainWindow.xaml;
+Views\ChooseDictionaryWindow.xaml;Views\MainWindow.xaml;Views\SessionYesNoWindow.xaml;
 
 True
 

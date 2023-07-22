@@ -18,13 +18,46 @@ namespace LearningApplication.ViewModels
             get
             {
                 if (learnLevel1 == null) learnLevel1 = new RelayCommand(
-                    async (object o) =>
+                    (object o) =>
                     {
+                        var session = SessionHelperSingleton.GetSingleton();
+                        session.sessionDifficulty = "Poznawanie słów";
                         new ChooseDictionaryWindow().Show();
                     });
                 return learnLevel1;
             }
+        }
 
+        private ICommand learnLevel2 = null;
+        public ICommand LearnLevel2
+        {
+            get
+            {
+                if (learnLevel2 == null) learnLevel2 = new RelayCommand(
+                    (object o) =>
+                    {
+                        var session = SessionHelperSingleton.GetSingleton();
+                        session.sessionDifficulty = "Uczenie słów";
+                        new ChooseDictionaryWindow().Show();
+                    });
+                return learnLevel2;
+            }
+        }
+
+        private ICommand learnLevel3 = null;
+        public ICommand LearnLevel3
+        {
+            get
+            {
+                if (learnLevel3 == null) learnLevel3 = new RelayCommand(
+                    (object o) =>
+                    {
+                        var session = SessionHelperSingleton.GetSingleton();
+                        session.sessionDifficulty = "Sprawdzenie wiedzy";
+                        new ChooseDictionaryWindow().Show();
+                    });
+                return learnLevel3;
+            }
         }
 
 

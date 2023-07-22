@@ -10,12 +10,18 @@
     <Compile Update="Views\ChooseDictionaryWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\SessionYesNoWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\ChooseDictionaryWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SessionYesNoWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
