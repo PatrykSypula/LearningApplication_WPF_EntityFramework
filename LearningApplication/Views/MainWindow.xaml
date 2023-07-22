@@ -1,0 +1,39 @@
+﻿<Window x:Class="LearningApplication.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LearningApplication"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        xmlns:vm="clr-namespace:LearningApplication.ViewModels">
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Menu>
+            <MenuItem Header="Nauka">
+                <MenuItem Header="Poznaj słowa" Command="{Binding LearnLevel1}" />
+                <MenuItem Header="Ucz się słów" Command="{Binding LearnLevel2}"/>
+                <MenuItem Header="Sprawdź swoją wiedzę" Command="{Binding LearnLevel3}"/>
+            </MenuItem>
+            <MenuItem Header="Słowniki">
+                <MenuItem Header="Nowy słownik" Command="{Binding DictionaryCreate}"/>
+                <MenuItem Header="Edytuj słownik" Command="{Binding DictionaryEdit}"/>
+                <MenuItem Header="Usuń słownik" Command="{Binding DictionaryDelete}"/>
+            </MenuItem>
+            <MenuItem Header="Statystyki">
+                <MenuItem Header="Przeglądaj statystyki" Command="{Binding StatisticsShow}"/>
+                <MenuItem Header="Usuń statystykę" Command="{Binding StatisticsDelete}"/>
+            </MenuItem>
+        </Menu>
+    </Grid>
+</Window>
