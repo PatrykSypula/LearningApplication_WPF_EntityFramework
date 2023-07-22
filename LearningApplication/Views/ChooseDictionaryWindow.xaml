@@ -15,23 +15,23 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="ChooseDictionaryWindow" Height="400" Width="400">
+        Title="Wybór słownika" Height="400" Width="400">
     <Window.DataContext>
         <vm:ChooseDictionaryViewModel />
     </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="300"></RowDefinition>
-            <RowDefinition Height="60"></RowDefinition>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
         </Grid.RowDefinitions>
-        <DataGrid Height="300" Grid.Row="0" VerticalAlignment="Top" x:Name="DataGridCardStack" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" CanUserAddRows="False" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding CardStackList}">
+        <DataGrid Height="300" Grid.Row="0" Grid.RowSpan="3" VerticalAlignment="Top" x:Name="DataGridCardStack" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" CanUserAddRows="False" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding CardStackList}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Wybierz słownik" MinWidth="200" Width="*" Binding="{Binding CardStackName}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
-            <Button x:Name="LoginButton" Width="120" Height="40" Command="{Binding OpenDictionary}" Content="Otwórz"  materialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Foreground="{DynamicResource MaterialDesignBody}" />
-            <Button x:Name="CancelButton" Width="120" Height="40" Command="{Binding CloseWindow}"  Margin="15,0,0,0" Content="Zamknij" materialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Foreground="{DynamicResource MaterialDesignBody}" Background="#FFFF5454" BorderBrush="#FFFF5454"/>
-        </StackPanel>
+        <Button Width="120" Height="40" Margin="60,20,0,0" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding OpenDictionary}" Content="Otwórz"  materialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Foreground="{DynamicResource MaterialDesignBody}" />
+        <Button Width="120" Height="40" Margin="0,20,60,0" HorizontalAlignment="Right" Grid.Row="4" Command="{Binding CloseWindow}" Content="Zamknij" materialDesign:ButtonAssist.CornerRadius="10" FontSize="18" Foreground="{DynamicResource MaterialDesignBody}" Background="#FFFF5454" BorderBrush="#FFFF5454"/>
     </Grid>
 </Window>
