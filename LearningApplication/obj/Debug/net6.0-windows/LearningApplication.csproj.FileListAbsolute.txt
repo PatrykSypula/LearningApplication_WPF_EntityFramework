@@ -122,3 +122,8 @@ C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\ChooseDictionaryWindow.g.cs
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\SessionYesNoWindow.g.cs
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\App.baml
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\ChooseDictionaryWindow.baml
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\MainWindow.baml
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\SessionYesNoWindow.baml
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\LearningApplication.g.resources

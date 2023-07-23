@@ -42,14 +42,6 @@ namespace LearningApplication.ViewModels
             }
         }
 
-        public ChooseDictionaryViewModel()
-        {
-            using (var context = new DatabaseContext())
-            {
-                chooseDictionary.cardStackList = context.CardStacks.ToList();
-            }
-        }
-
         #endregion
 
         #region Commands

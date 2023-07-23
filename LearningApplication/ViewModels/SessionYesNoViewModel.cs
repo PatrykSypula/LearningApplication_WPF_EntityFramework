@@ -9,11 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace LearningApplication.ViewModels
 {
     public class SessionYesNoViewModel : INotifyPropertyChanged
     {
+        #region Binding and Fields
+
         Models.Session session = new Models.Session();
 
         public SessionYesNoViewModel() 
@@ -139,6 +142,8 @@ namespace LearningApplication.ViewModels
             }
         }
 
+        #endregion
+
         #region Commands
 
         private ICommand? showWord = null;
@@ -204,13 +209,24 @@ namespace LearningApplication.ViewModels
 
         #endregion
 
-        #region Session Methods
+        #region Methods
 
-        public void CheckIfSessionHasEnded()
+        public async void CheckIfSessionHasEnded()
         {
             if (WordsList.Count == 0)
             {
-                //statystyki
+                var sessionHelper = SessionHelperSingleton.GetSingleton();
+                Entities.SessionStatistics stats = new SessionStatistics()
+                { SessionDate = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy")),
+                Difficulty = sessionHelper.sessionDifficulty,
+                GoodAnswers = NumberCorrectAnswers,
+                AllAnswers = NumberAllAnswers,
+                CardStackId = sessionHelper.cardStacks.Id};
+                using (var context = new DatabaseContext())
+                {
+                    await context.SessionStatistics.AddAsync(stats);
+                    await context.SaveChangesAsync();
+                }
                 foreach (Window item in System.Windows.Application.Current.Windows)
                 {
                     if (item.DataContext == this) item.Close();

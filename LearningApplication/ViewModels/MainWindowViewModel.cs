@@ -7,11 +7,21 @@ using System.Threading.Tasks;
 using static System.Net.Mime.MediaTypeNames;
 using System.Windows.Input;
 using LearningApplication.Views;
+using Microsoft.EntityFrameworkCore;
 
 namespace LearningApplication.ViewModels
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
+        public MainWindowViewModel() 
+        {
+            using (var context = new DatabaseContext())
+            {
+                //Statement return nothing.
+                //It is used to execute first query that takes more time so there will not be any long loading windows.
+                context.CardStacks.Where(c => c.Id == 0).AsNoTracking().ToList();
+            }
+        }
         #region Commands
 
         private ICommand? learnLevel1 = null;

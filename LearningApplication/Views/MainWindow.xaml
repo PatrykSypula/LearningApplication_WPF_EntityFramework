@@ -20,19 +20,19 @@
     </Window.DataContext>
     <Grid>
         <Menu>
-            <MenuItem Header="Nauka">
-                <MenuItem Header="Poznaj słowa" Command="{Binding LearnLevel1}" />
-                <MenuItem Header="Ucz się słów" Command="{Binding LearnLevel2}"/>
-                <MenuItem Header="Sprawdź swoją wiedzę" Command="{Binding LearnLevel3}"/>
+            <MenuItem Header="Nauka" FontSize="20">
+                <MenuItem Header="Poznaj słowa" Command="{Binding LearnLevel1}" FontSize="20" />
+                <MenuItem Header="Ucz się słów" Command="{Binding LearnLevel2}" FontSize="20"/>
+                <MenuItem Header="Sprawdź swoją wiedzę" Command="{Binding LearnLevel3}" FontSize="20"/>
             </MenuItem>
-            <MenuItem Header="Słowniki">
-                <MenuItem Header="Nowy słownik" Command="{Binding DictionaryCreate}"/>
-                <MenuItem Header="Edytuj słownik" Command="{Binding DictionaryEdit}"/>
-                <MenuItem Header="Usuń słownik" Command="{Binding DictionaryDelete}"/>
+            <MenuItem Header="Słowniki" FontSize="20">
+                <MenuItem Header="Nowy słownik" Command="{Binding DictionaryCreate}" FontSize="20"/>
+                <MenuItem Header="Edytuj słownik" Command="{Binding DictionaryEdit}" FontSize="20"/>
+                <MenuItem Header="Usuń słownik" Command="{Binding DictionaryDelete}" FontSize="20"/>
             </MenuItem>
-            <MenuItem Header="Statystyki">
-                <MenuItem Header="Przeglądaj statystyki" Command="{Binding StatisticsShow}"/>
-                <MenuItem Header="Usuń statystykę" Command="{Binding StatisticsDelete}"/>
+            <MenuItem Header="Statystyki" FontSize="20">
+                <MenuItem Header="Przeglądaj statystyki" Command="{Binding StatisticsShow}" FontSize="20"/>
+                <MenuItem Header="Usuń statystykę" Command="{Binding StatisticsDelete}" FontSize="20"/>
             </MenuItem>
         </Menu>
     </Grid>

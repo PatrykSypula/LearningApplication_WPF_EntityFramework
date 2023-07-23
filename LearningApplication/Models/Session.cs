@@ -1,4 +1,6 @@
 ﻿using LearningApplication.Entities;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Internal;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,19 +17,15 @@ namespace LearningApplication.Models
         public int totalWords;
         public int numberAllAnswers;
         public int numberCorrectAnswers;
-        public string numberPercent;
-        public string numberDictionaryCompleted;
+        public string? numberPercent;
+        public string? numberDictionaryCompleted;
         public string? wordPolish;
         public string? wordTranslated;
         public List<Words> wordsList;
 
         public Session()
         {
-            using (var context = new DatabaseContext())
-            {
-                var session = SessionHelperSingleton.GetSingleton();
-                wordsList = context.Words.Where(w => w.CardStackId == session.cardStacks.Id).ToList();
-            }
+            GetDataFromDb();
         }
         public Words RollWord()
         {
@@ -59,6 +57,16 @@ namespace LearningApplication.Models
                 return wordsList[indexRandom];
             }
             return null;
+        }
+
+        private void GetDataFromDb()
+        {
+            using (var context = new DatabaseContext())
+            {
+                
+                var session = SessionHelperSingleton.GetSingleton();
+                wordsList = context.Words.Where(w => w.CardStackId == session.cardStacks.Id).AsNoTracking().ToList();
+            }
         }
     }
 }

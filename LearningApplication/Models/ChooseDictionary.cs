@@ -1,4 +1,5 @@
 ﻿using LearningApplication.Entities;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,5 +12,17 @@ namespace LearningApplication.Models
     {
         public List<CardStacks> cardStackList;
         public CardStacks? selectedItem;
+
+        public ChooseDictionary()
+        {
+            GetDataFromDb();
+        }
+        private void GetDataFromDb()
+        {
+            using (var context = new DatabaseContext())
+            {
+                cardStackList = context.CardStacks.AsNoTracking().ToList();
+            }
+        }
     }
 }
