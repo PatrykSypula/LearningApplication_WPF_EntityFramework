@@ -14,7 +14,7 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="SessionYesNoWindow" Height="560" Width="800">
+        Title="SessionYesNoWindow" Height="660" Width="800">
     <Window.DataContext>
         <vm:SessionYesNoViewModel />
     </Window.DataContext>
@@ -31,18 +31,25 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
             <RowDefinition Height="10"/>
         </Grid.RowDefinitions>
         <Button Grid.Row="0" Content="Słowo" Background="White" HorizontalAlignment="Left" Margin="50,0,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="150" Height="40" FontSize="20" Foreground="Black"/>
-        <Button Grid.Row="1" Grid.RowSpan="3" Height="135" Width="700" Content="{Binding PolishWord}" Background="White" HorizontalAlignment="Left" Margin="50,0,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" FontSize="30" Foreground="Black"/>
+        <Button Grid.Row="1" Grid.RowSpan="3" Height="135" Width="700" Content="{Binding WordPolish}" Background="White" HorizontalAlignment="Left" Margin="50,0,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" FontSize="30" Foreground="Black"/>
         <Button Grid.Row="4" Content="Znaczenie" Background="White" HorizontalAlignment="Left" Margin="50,0,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="150" Height="40" FontSize="20" Foreground="Black"/>
-        <Button Grid.Row="5" Grid.RowSpan="3" Height="135" Width="700" Content="{Binding TranslatedWord}" Command="{Binding ShowWord}" Background="White" HorizontalAlignment="Left" Margin="50,0,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" FontSize="30" Foreground="Black"/>
-        <Label Grid.Row="8" Margin="50,10,0,0" Width="100" Height="40" FontSize="20" HorizontalAlignment="Left" Content="Poprawne" HorizontalContentAlignment="Center" Foreground="Black"/>
-        <Label Grid.Row="8" Margin="200,10,0,0" Width="100" Height="40" FontSize="20" HorizontalAlignment="Left" Content="Wszystkie" HorizontalContentAlignment="Center" Foreground="Black"/>
-        <Label Grid.Row="8" Margin="350,10,0,0" Width="100" Height="40" FontSize="20" HorizontalAlignment="Left" Content="Procent" HorizontalContentAlignment="Center" Foreground="Black"/>
-        <Button Grid.Row="9" Grid.RowSpan="2" Content="{Binding CorrectAnswers}" Background="White" HorizontalAlignment="Left" Margin="50,0,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="100" Height="80" FontSize="20" Foreground="Black"/>
-        <Button Grid.Row="9" Grid.RowSpan="2" Content="{Binding AllAnswers}" Background="White" HorizontalAlignment="Left" Margin="200,0,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="100" Height="80" FontSize="20" Foreground="Black"/>
-        <Button Grid.Row="9" Grid.RowSpan="2" Content="{Binding Percent}" Background="White" HorizontalAlignment="Left" Margin="350,0,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="100" Height="80" FontSize="20" Foreground="Black"/>
+        <Button Grid.Row="5" Grid.RowSpan="3" Height="135" Width="700" Content="{Binding WordTranslated}" Command="{Binding ShowWord}" Background="White" HorizontalAlignment="Left" Margin="50,0,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" FontSize="30" Foreground="Black"/>
+        <Label Grid.Row="8" Margin="50,10,0,0" Width="150" Height="40" FontSize="20" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Content="Odpowiedzi" Foreground="Black"/>
+        <Label Grid.Row="8" Margin="225,10,0,0" Width="150" Height="40" FontSize="20" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Content="Poprawne" Foreground="Black"/>
+        <Label Grid.Row="8" Margin="425,10,0,0" Width="150" Height="40" FontSize="20" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Content="Skuteczność" Foreground="Black"/>
+        <Label Grid.Row="8" Margin="600,10,0,0" Width="150" Height="40" FontSize="20" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Content="Ukończenie" Foreground="Black"/>
+        <Button Grid.Row="9" Grid.RowSpan="2" Content="{Binding NumberAllAnswers}" Background="White" HorizontalAlignment="Left" Margin="50,0,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="150" Height="80" FontSize="20" Foreground="Black"/>
+        <Button Grid.Row="9" Grid.RowSpan="2" Content="{Binding NumberCorrectAnswers}" Background="White" HorizontalAlignment="Left" Margin="225,0,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="150" Height="80" FontSize="20" Foreground="Black"/>
+        <Button Grid.Row="9" Grid.RowSpan="2" Content="{Binding NumberPercent}" Background="White" HorizontalAlignment="Left" Margin="425,0,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="150" Height="80" FontSize="20" Foreground="Black"/>
+        <Button Grid.Row="9" Grid.RowSpan="2" Content="{Binding NumberDictionaryCompleted}" Background="White" HorizontalAlignment="Left" Margin="600,0,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="150" Height="80" FontSize="20" Foreground="Black"/>
+
+        <Button Grid.Row="11" Grid.RowSpan="2" Content="Umiem" Width="325" Height="80" Margin="50,0,0,0" HorizontalAlignment="Left" Command="{Binding AnswerCorrect}" materialDesign:ButtonAssist.CornerRadius="10" FontSize="30" Foreground="{DynamicResource MaterialDesignBody}" />
+        <Button Grid.Row="11" Grid.RowSpan="2" Content="Nie umiem" Width="325" Height="80" Margin="425,0,0,0" HorizontalAlignment="Left" Command="{Binding AnswerIncorrect}" materialDesign:ButtonAssist.CornerRadius="10" FontSize="30" Foreground="{DynamicResource MaterialDesignBody}" Background="#FFFF5454" BorderBrush="#FFFF5454"/>
 
     </Grid>
 </Window>

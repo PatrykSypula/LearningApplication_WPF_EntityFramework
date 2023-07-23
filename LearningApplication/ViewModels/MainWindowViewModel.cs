@@ -12,7 +12,9 @@ namespace LearningApplication.ViewModels
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
-        private ICommand learnLevel1 = null;
+        #region Commands
+
+        private ICommand? learnLevel1 = null;
         public ICommand LearnLevel1
         {
             get
@@ -28,7 +30,7 @@ namespace LearningApplication.ViewModels
             }
         }
 
-        private ICommand learnLevel2 = null;
+        private ICommand? learnLevel2 = null;
         public ICommand LearnLevel2
         {
             get
@@ -44,7 +46,7 @@ namespace LearningApplication.ViewModels
             }
         }
 
-        private ICommand learnLevel3 = null;
+        private ICommand? learnLevel3 = null;
         public ICommand LearnLevel3
         {
             get
@@ -60,11 +62,17 @@ namespace LearningApplication.ViewModels
             }
         }
 
+        #endregion
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string PropertyName = null)
+        #region INotifyPropertyChanged Implementation
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        private void OnPropertyChanged(string? PropertyName = null)
         {
             if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(PropertyName));
         }
+
+        #endregion
+
     }
 }

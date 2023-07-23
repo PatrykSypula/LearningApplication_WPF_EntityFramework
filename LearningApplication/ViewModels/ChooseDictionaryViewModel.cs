@@ -16,15 +16,29 @@ namespace LearningApplication.ViewModels
 {
     public class ChooseDictionaryViewModel : INotifyPropertyChanged
     {
-        private List<CardStacks> cardStackList;
+        #region Binding and Fields
+
+        Models.ChooseDictionary chooseDictionary = new Models.ChooseDictionary();
 
         public List<CardStacks> CardStackList
         {
-            get { return cardStackList; }
+            get { return chooseDictionary.cardStackList; }
             set
             {
-                cardStackList = value;
+                chooseDictionary.cardStackList = value;
                 OnPropertyChanged(nameof(CardStackList));
+            }
+        }
+
+        public CardStacks? SelectedItem
+        {
+            get
+            {
+                return chooseDictionary.selectedItem;
+            }
+            set
+            {
+                chooseDictionary.selectedItem = value;
             }
         }
 
@@ -32,12 +46,15 @@ namespace LearningApplication.ViewModels
         {
             using (var context = new DatabaseContext())
             {
-                cardStackList = context.CardStacks.ToList();
+                chooseDictionary.cardStackList = context.CardStacks.ToList();
             }
         }
-        public CardStacks SelectedItem { get; set; }
 
-        private ICommand closeWindow = null;
+        #endregion
+
+        #region Commands
+
+        private ICommand? closeWindow = null;
         public ICommand CloseWindow
         {
             get
@@ -54,7 +71,7 @@ namespace LearningApplication.ViewModels
             }
         }
 
-        private ICommand openDictionary = null;
+        private ICommand? openDictionary = null;
         public ICommand OpenDictionary
         {
             get
@@ -62,8 +79,9 @@ namespace LearningApplication.ViewModels
                 if (openDictionary == null) openDictionary = new RelayCommand(
                      (object o) =>
                      {
+                         
                          var session = SessionHelperSingleton.GetSingleton();
-                         session.cardStacks = (CardStacks)SelectedItem;
+                         session.cardStacks = SelectedItem;
 
                          foreach (Window item in System.Windows.Application.Current.Windows)
                          {
@@ -80,10 +98,16 @@ namespace LearningApplication.ViewModels
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
-        private void OnPropertyChanged(string PropertyName = null)
+        #endregion
+
+        #region INotifyPropertyChanged Implementation
+
+        public event PropertyChangedEventHandler? PropertyChanged;
+        private void OnPropertyChanged(string? PropertyName = null)
         {
             if (PropertyChanged != null) PropertyChanged(this, new PropertyChangedEventArgs(PropertyName));
         }
+
+        #endregion
     }
 }
