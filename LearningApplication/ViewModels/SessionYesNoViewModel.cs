@@ -18,7 +18,7 @@ namespace LearningApplication.ViewModels
         #region Binding and Fields
 
         Models.Session session = new Models.Session();
-
+        public static bool showExitPrompt = false;
         public SessionYesNoViewModel() 
         {
             NumberAllAnswers = 0;
@@ -26,6 +26,7 @@ namespace LearningApplication.ViewModels
             NumberPercent = "";
             NumberDictionaryCompleted = "";
             session.totalWords = WordsList.Count;
+            WindowName = sessionHelper.sessionDifficulty + " ze słownika: " + sessionHelper.cardStacks.CardStackName;
             try
             {
                 AfterClick();
@@ -37,6 +38,22 @@ namespace LearningApplication.ViewModels
                 {
                     if (item.DataContext == this) item.Close();
                 }
+            }
+            showExitPrompt = true;
+        }
+        SessionHelperSingleton sessionHelper = SessionHelperSingleton.GetSingleton();
+
+        private string windowName;
+        public string WindowName
+        {
+            get
+            {
+                return windowName;
+            }
+            set
+            {
+                windowName = value;
+                OnPropertyChanged(nameof(WindowName));
             }
         }
         
@@ -215,7 +232,6 @@ namespace LearningApplication.ViewModels
         {
             if (WordsList.Count == 0)
             {
-                var sessionHelper = SessionHelperSingleton.GetSingleton();
                 Entities.SessionStatistics stats = new SessionStatistics()
                 { SessionDate = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy")),
                 Difficulty = sessionHelper.sessionDifficulty,
@@ -227,6 +243,7 @@ namespace LearningApplication.ViewModels
                     await context.SessionStatistics.AddAsync(stats);
                     await context.SaveChangesAsync();
                 }
+                showExitPrompt = false;
                 foreach (Window item in System.Windows.Application.Current.Windows)
                 {
                     if (item.DataContext == this) item.Close();

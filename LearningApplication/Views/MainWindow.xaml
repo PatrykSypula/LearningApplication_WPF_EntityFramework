@@ -14,6 +14,8 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
         xmlns:vm="clr-namespace:LearningApplication.ViewModels">
     <Window.DataContext>
         <vm:MainWindowViewModel />

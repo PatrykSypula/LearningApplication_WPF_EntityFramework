@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,18 @@ namespace LearningApplication.Views
         public SessionYesNoWindow()
         {
             InitializeComponent();
+        }
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            if (ViewModels.SessionYesNoViewModel.showExitPrompt)
+            {
+                var result = MessageBox.Show("Czy na pewno chcesz zakończyć sesję?", "Wyjście z sesji", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+            
         }
     }
 }

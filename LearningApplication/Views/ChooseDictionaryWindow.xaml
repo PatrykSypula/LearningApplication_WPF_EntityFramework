@@ -7,6 +7,7 @@
         xmlns:vm="clr-namespace:LearningApplication.ViewModels"
         mc:Ignorable="d"
         ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -26,9 +27,9 @@
             <RowDefinition />
             <RowDefinition Height="60"/>
         </Grid.RowDefinitions>
-        <DataGrid HorizontalAlignment="Stretch" Grid.Row="0" FontSize="25" Grid.RowSpan="3" VerticalAlignment="Top" x:Name="DataGridCardStack" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" CanUserAddRows="False" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding CardStackList}">
+        <DataGrid HorizontalAlignment="Stretch" Grid.Row="0" FontSize="20" Grid.RowSpan="3" VerticalAlignment="Top" x:Name="DataGridCardStack" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" CanUserAddRows="False" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding CardStackList}">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Wybierz słownik" FontSize="20" Width="*" Binding="{Binding CardStackName}"/>
+                <DataGridTextColumn Header="Wybierz słownik" Width="*" Binding="{Binding CardStackName}"/>
             </DataGrid.Columns>
         </DataGrid>
         <Button Width="120" Height="40" Margin="60,0,0,0" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding OpenDictionary}" Content="Otwórz"  materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" />
