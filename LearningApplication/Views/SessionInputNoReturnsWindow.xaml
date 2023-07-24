@@ -44,6 +44,6 @@
         <Label Grid.Row="8" Margin="425,10,0,0" Width="325" Height="40" FontSize="20" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Content="Ukończenie" Foreground="Black"/>
         <Button Grid.Row="9" IsEnabled="False" Opacity="1" Grid.RowSpan="2" Content="{Binding NumberAllAnswers}" Background="White" HorizontalAlignment="Left" Margin="50,0,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="325" Height="80" FontSize="20" Foreground="Black"/>
         <Button Grid.Row="9" IsEnabled="False" Opacity="1" Grid.RowSpan="2" Content="{Binding NumberDictionaryCompleted}" Background="White" HorizontalAlignment="Left" Margin="425,0,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="325" Height="80" FontSize="20" Foreground="Black"/>
-        <Button Grid.Row="11" Grid.RowSpan="2" Content="Następny" IsDefault="True" Width="700" Height="80" Margin="50,0,0,0" HorizontalAlignment="Left" Command="{Binding AnswerNext}" materialDesign:ButtonAssist.CornerRadius="10" FontSize="30" Foreground="{DynamicResource MaterialDesignBody}" />
+        <Button Grid.Row="11" Grid.RowSpan="2" Content="Następny" Width="700" Height="80" Margin="50,0,0,0" HorizontalAlignment="Left" Command="{Binding AnswerNext}" materialDesign:ButtonAssist.CornerRadius="10" FontSize="30" Foreground="{DynamicResource MaterialDesignBody}" />
     </Grid>
 </Window>
