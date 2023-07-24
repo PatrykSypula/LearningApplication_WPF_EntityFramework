@@ -8,6 +8,7 @@ using static System.Net.Mime.MediaTypeNames;
 using System.Windows.Input;
 using LearningApplication.Views;
 using Microsoft.EntityFrameworkCore;
+using MaterialDesignThemes.Wpf;
 
 namespace LearningApplication.ViewModels
 {
@@ -24,51 +25,51 @@ namespace LearningApplication.ViewModels
         }
         #region Commands
 
-        private ICommand? learnLevel1 = null;
-        public ICommand LearnLevel1
+        private ICommand? wordsKnow = null;
+        public ICommand WordsKnow
         {
             get
             {
-                if (learnLevel1 == null) learnLevel1 = new RelayCommand(
+                if (wordsKnow == null) wordsKnow = new RelayCommand(
                     (object o) =>
                     {
                         var session = SessionHelperSingleton.GetSingleton();
                         session.sessionDifficulty = "Poznawanie słów";
-                        new ChooseDictionaryWindow().Show();
+                        new ChooseDictionaryWindow().ShowDialog();
                     });
-                return learnLevel1;
+                return wordsKnow;
             }
         }
 
-        private ICommand? learnLevel2 = null;
-        public ICommand LearnLevel2
+        private ICommand? wordsLearn = null;
+        public ICommand WordsLearn
         {
             get
             {
-                if (learnLevel2 == null) learnLevel2 = new RelayCommand(
+                if (wordsLearn == null) wordsLearn = new RelayCommand(
                     (object o) =>
                     {
                         var session = SessionHelperSingleton.GetSingleton();
                         session.sessionDifficulty = "Uczenie słów";
-                        new ChooseDictionaryWindow().Show();
+                        new ChooseDictionaryWindow().ShowDialog();
                     });
-                return learnLevel2;
+                return wordsLearn;
             }
         }
 
-        private ICommand? learnLevel3 = null;
-        public ICommand LearnLevel3
+        private ICommand? wordsTest = null;
+        public ICommand WordsTest
         {
             get
             {
-                if (learnLevel3 == null) learnLevel3 = new RelayCommand(
+                if (wordsTest == null) wordsTest = new RelayCommand(
                     (object o) =>
                     {
                         var session = SessionHelperSingleton.GetSingleton();
                         session.sessionDifficulty = "Sprawdzenie wiedzy";
-                        new ChooseDictionaryWindow().Show();
+                        new ChooseDictionaryWindow().ShowDialog();
                     });
-                return learnLevel3;
+                return wordsTest;
             }
         }
 

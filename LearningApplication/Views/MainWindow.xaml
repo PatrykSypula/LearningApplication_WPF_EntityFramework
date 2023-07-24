@@ -23,9 +23,9 @@
     <Grid>
         <Menu>
             <MenuItem Header="Nauka" FontSize="20">
-                <MenuItem Header="Poznaj słowa" Command="{Binding LearnLevel1}" FontSize="20" />
-                <MenuItem Header="Ucz się słów" Command="{Binding LearnLevel2}" FontSize="20"/>
-                <MenuItem Header="Sprawdź swoją wiedzę" Command="{Binding LearnLevel3}" FontSize="20"/>
+                <MenuItem Header="Poznaj słowa" Command="{Binding WordsKnow}" FontSize="20" />
+                <MenuItem Header="Ucz się słów" Command="{Binding WordsLearn}" FontSize="20"/>
+                <MenuItem Header="Sprawdź swoją wiedzę" Command="{Binding WordsTest}" FontSize="20"/>
             </MenuItem>
             <MenuItem Header="Słowniki" FontSize="20">
                 <MenuItem Header="Nowy słownik" Command="{Binding DictionaryCreate}" FontSize="20"/>

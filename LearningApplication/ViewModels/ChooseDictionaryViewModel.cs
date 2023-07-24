@@ -71,7 +71,7 @@ namespace LearningApplication.ViewModels
                 if (openDictionary == null) openDictionary = new RelayCommand(
                      (object o) =>
                      {
-                         
+
                          var session = SessionHelperSingleton.GetSingleton();
                          session.cardStacks = SelectedItem;
 
@@ -79,8 +79,22 @@ namespace LearningApplication.ViewModels
                          {
                              if (item.DataContext == this) item.Close();
                          }
+                         switch (session.sessionDifficulty)
+                         {
+                             case "Poznawanie słów":
+                                 new SessionYesNoWindow().ShowDialog();
+                                 break;
+                             case "Uczenie słów":
+                                 new SessionInputWithReturnsWindow().ShowDialog();
+                                 break;
+                             case "Sprawdzenie wiedzy":
 
-                         new SessionYesNoWindow().Show();
+                                 break;
+                             default:
+                                 MessageBox.Show("Wystąpił błąd podczas ładowania słownika.");
+                                 break;
+
+                         }
                      },
                      (object o) =>
                      {

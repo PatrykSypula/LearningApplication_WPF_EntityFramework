@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\App.xaml
-31616825398
+4-1614315479
 
-18-1324549544
+201379962591
 225-406134218
-Views\ChooseDictionaryWindow.xaml;Views\MainWindow.xaml;Views\SessionYesNoWindow.xaml;
+Views\ChooseDictionaryWindow.xaml;Views\MainWindow.xaml;Views\SessionInputWithReturnsWindow.xaml;Views\SessionYesNoWindow.xaml;
 
-False
+True
 

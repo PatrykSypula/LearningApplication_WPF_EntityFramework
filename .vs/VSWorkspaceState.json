@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\LearningApplication",
+    "\\LearningApplication\\Views"
   ],
-  "SelectedNode": "\\LearningApplication.sln",
+  "SelectedNode": "\\LearningApplication\\Views\\SessionYesNoWindow.xaml",
   "PreviewInSolutionExplorer": false
 }

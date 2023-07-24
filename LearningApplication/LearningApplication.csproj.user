@@ -10,6 +10,9 @@
     <Compile Update="Views\ChooseDictionaryWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="Views\SessionInputWithReturnsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\SessionYesNoWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -19,6 +22,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\SessionInputWithReturnsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\SessionYesNoWindow.xaml">
