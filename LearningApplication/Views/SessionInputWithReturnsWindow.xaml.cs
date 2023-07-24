@@ -37,5 +37,10 @@ namespace LearningApplication.Views
             }
 
         }
+
+        private void Window_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
     }
 }
