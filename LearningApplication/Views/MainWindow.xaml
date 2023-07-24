@@ -17,9 +17,6 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen"
         xmlns:vm="clr-namespace:LearningApplication.ViewModels">
-    <Window.DataContext>
-        <vm:MainWindowViewModel />
-    </Window.DataContext>
     <Grid>
         <Menu>
             <MenuItem Header="Nauka" FontSize="20">

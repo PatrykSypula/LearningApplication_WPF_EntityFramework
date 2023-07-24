@@ -23,6 +23,7 @@ namespace LearningApplication
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = new ViewModels.MainWindowViewModel();
         }
     }
 }

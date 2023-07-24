@@ -41,6 +41,7 @@ namespace LearningApplication.ViewModels
                 }
             }
             showExitPrompt = true;
+            AnswerBackground = Brushes.White;
             ButtonText = "Sprawdź";
         }
 
@@ -226,22 +227,21 @@ namespace LearningApplication.ViewModels
                         else
                         {
                             ButtonText = "Sprawdź";
-                            AnswerBackground = Brushes.Transparent;
+                            AnswerBackground = Brushes.White;
                             if (isCorrect)
                             {
                                 WordTranslated = "";
                                 WordsList.RemoveAt(session.indexRandom);
                                 NumberCorrectAnswers++;
-                                NumberAllAnswers++;
-                                CheckIfSessionHasEnded();
+
                             }
                             else
                             {
                                 WordTranslated = "";
-                                NumberAllAnswers++;
                                 session.RollWord();
-                                CheckIfSessionHasEnded();
                             }
+                            NumberAllAnswers++;
+                            CheckIfSessionHasEnded();
                         }
                     });
                 return answerCheck;

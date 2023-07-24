@@ -22,6 +22,7 @@ namespace LearningApplication.Views
         public ChooseDictionaryWindow()
         {
             InitializeComponent();
+            this.DataContext = new ViewModels.ChooseDictionaryViewModel();
         }
     }
 }

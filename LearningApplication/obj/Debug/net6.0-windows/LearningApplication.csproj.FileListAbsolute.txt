@@ -119,7 +119,6 @@ C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\LearningApplication.genruntimeconfig.cache
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\ref\LearningApplication.dll
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\MainWindow.g.cs
-C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\ChooseDictionaryWindow.g.cs
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\SessionYesNoWindow.g.cs
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\App.baml
@@ -129,3 +128,5 @@ C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\LearningApplication.g.resources
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\SessionInputWithReturnsWindow.g.cs
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\SessionInputWithReturnsWindow.baml
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\SessionInputNoReturnsWindow.g.cs
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\SessionInputNoReturnsWindow.baml

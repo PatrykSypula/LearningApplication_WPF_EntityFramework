@@ -17,9 +17,6 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="Wybór słownika" Height="600" Width="500">
-    <Window.DataContext>
-        <vm:ChooseDictionaryViewModel />
-    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />
@@ -32,7 +29,7 @@
                 <DataGridTextColumn Header="Wybierz słownik" Width="*" Binding="{Binding CardStackName}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Width="120" Height="40" Margin="60,0,0,0" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding OpenDictionary}" Content="Otwórz"  materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" />
-        <Button Width="120" Height="40" Margin="0,0,60,0" HorizontalAlignment="Right" Grid.Row="4" Command="{Binding CloseWindow}" Content="Zamknij" materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="#FFFF5454" BorderBrush="#FFFF5454"/>
+        <Button Width="120" Height="40" Margin="60,0,0,0" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding OpenDictionary}" IsDefault="True" Content="Otwórz"  materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" />
+        <Button Width="120" Height="40" Margin="0,0,60,0" HorizontalAlignment="Right" Grid.Row="4" Command="{Binding CloseWindow}" IsCancel="True" Content="Zamknij" materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="#FFFF5454" BorderBrush="#FFFF5454"/>
     </Grid>
 </Window>

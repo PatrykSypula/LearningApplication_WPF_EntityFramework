@@ -23,6 +23,7 @@ namespace LearningApplication.Views
         public SessionYesNoWindow()
         {
             InitializeComponent();
+            this.DataContext = new ViewModels.SessionYesNoViewModel();
         }
         protected override void OnClosing(CancelEventArgs e)
         {

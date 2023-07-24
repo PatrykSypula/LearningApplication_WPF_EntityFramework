@@ -17,10 +17,6 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="{Binding WindowName}" Height="660" Width="800">
-    
-    <Window.DataContext>
-        <vm:SessionYesNoViewModel />
-    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />

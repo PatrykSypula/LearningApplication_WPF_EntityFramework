@@ -88,7 +88,7 @@ namespace LearningApplication.ViewModels
                                  new SessionInputWithReturnsWindow().ShowDialog();
                                  break;
                              case "Sprawdzenie wiedzy":
-
+                                 new SessionInputNoReturnsWindow().ShowDialog();
                                  break;
                              default:
                                  MessageBox.Show("Wystąpił błąd podczas ładowania słownika.");
