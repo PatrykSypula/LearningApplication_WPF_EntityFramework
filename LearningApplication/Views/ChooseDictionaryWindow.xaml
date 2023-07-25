@@ -22,7 +22,7 @@
             <RowDefinition />
             <RowDefinition />
             <RowDefinition />
-            <RowDefinition Height="60"/>
+            <RowDefinition Height="120"/>
         </Grid.RowDefinitions>
         <DataGrid HorizontalAlignment="Stretch" Grid.Row="0" FontSize="20" Grid.RowSpan="3" VerticalAlignment="Top" x:Name="DataGridCardStack" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" CanUserAddRows="False" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding CardStackList}">
             <DataGrid.Columns>
@@ -32,7 +32,7 @@
                 <MouseBinding Gesture="LeftDoubleClick" Command="{Binding OpenDictionary}"/>
             </DataGrid.InputBindings>
         </DataGrid>
-        <Button Width="120" Height="40" Margin="60,0,0,0" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding OpenDictionary}" IsDefault="True" Content="Otwórz"  materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" />
-        <Button Width="120" Height="40" Margin="0,0,60,0" HorizontalAlignment="Right" Grid.Row="4" Command="{Binding CloseWindow}" IsCancel="True" Content="Zamknij" materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="#FFFF5454" BorderBrush="#FFFF5454"/>
+        <Button Width="180" Height="60" Margin="50,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding OpenDictionary}" IsDefault="True" Content="Otwórz"  materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" />
+        <Button Width="180" Height="60" Margin="270,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding CloseWindow}" IsCancel="True" Content="Zamknij" materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="#FFFF5454" BorderBrush="#FFFF5454"/>
     </Grid>
 </Window>

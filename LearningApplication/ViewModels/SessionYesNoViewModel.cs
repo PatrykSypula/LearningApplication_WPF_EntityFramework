@@ -26,7 +26,7 @@ namespace LearningApplication.ViewModels
             NumberPercent = "";
             NumberDictionaryCompleted = "";
             session.totalWords = WordsList.Count;
-            WindowName = sessionHelper.sessionDifficulty + " ze słownika: " + sessionHelper.cardStacks.CardStackName;
+            WindowName = applicationHelper.sessionDifficulty + " ze słownika: " + applicationHelper.cardStacks.CardStackName;
             try
             {
                 AfterClick();
@@ -41,7 +41,7 @@ namespace LearningApplication.ViewModels
             }
             showExitPrompt = true;
         }
-        SessionHelperSingleton sessionHelper = SessionHelperSingleton.GetSingleton();
+        ApplicationHelperSingleton applicationHelper = ApplicationHelperSingleton.GetSingleton();
 
         private string windowName;
         public string WindowName
@@ -234,10 +234,10 @@ namespace LearningApplication.ViewModels
             {
                 Entities.SessionStatistics stats = new SessionStatistics()
                 { SessionDate = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy")),
-                Difficulty = sessionHelper.sessionDifficulty,
+                Difficulty = applicationHelper.sessionDifficulty,
                 GoodAnswers = NumberCorrectAnswers,
                 AllAnswers = NumberAllAnswers,
-                CardStackId = sessionHelper.cardStacks.Id};
+                CardStackId = applicationHelper.cardStacks.Id};
                 using (var context = new DatabaseContext())
                 {
                     await context.SessionStatistics.AddAsync(stats);

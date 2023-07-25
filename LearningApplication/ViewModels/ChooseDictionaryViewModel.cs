@@ -72,7 +72,7 @@ namespace LearningApplication.ViewModels
                      (object o) =>
                      {
 
-                         var session = SessionHelperSingleton.GetSingleton();
+                         var session = ApplicationHelperSingleton.GetSingleton();
                          session.cardStacks = SelectedItem;
 
                          foreach (Window item in System.Windows.Application.Current.Windows)

@@ -130,3 +130,7 @@ C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\SessionInputWithReturnsWindow.baml
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\SessionInputNoReturnsWindow.g.cs
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\SessionInputNoReturnsWindow.baml
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\DictionaryManagementWindow.g.cs
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\DictionaryManagementWindow.baml
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\DictionaryCreateWindow.g.cs
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\DictionaryCreateWindow.baml

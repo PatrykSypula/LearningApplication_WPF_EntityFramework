@@ -33,7 +33,7 @@ namespace LearningApplication.ViewModels
                 if (wordsKnow == null) wordsKnow = new RelayCommand(
                     (object o) =>
                     {
-                        var session = SessionHelperSingleton.GetSingleton();
+                        var session = ApplicationHelperSingleton.GetSingleton();
                         session.sessionDifficulty = "Poznawanie słów";
                         new ChooseDictionaryWindow().ShowDialog();
                     });
@@ -49,7 +49,7 @@ namespace LearningApplication.ViewModels
                 if (wordsLearn == null) wordsLearn = new RelayCommand(
                     (object o) =>
                     {
-                        var session = SessionHelperSingleton.GetSingleton();
+                        var session = ApplicationHelperSingleton.GetSingleton();
                         session.sessionDifficulty = "Uczenie słów";
                         new ChooseDictionaryWindow().ShowDialog();
                     });
@@ -65,7 +65,7 @@ namespace LearningApplication.ViewModels
                 if (wordsTest == null) wordsTest = new RelayCommand(
                     (object o) =>
                     {
-                        var session = SessionHelperSingleton.GetSingleton();
+                        var session = ApplicationHelperSingleton.GetSingleton();
                         session.sessionDifficulty = "Sprawdzenie wiedzy";
                         new ChooseDictionaryWindow().ShowDialog();
                     });
@@ -73,6 +73,79 @@ namespace LearningApplication.ViewModels
             }
         }
 
+        private ICommand? dictionaryCreate = null;
+        public ICommand DictionaryCreate
+        {
+            get
+            {
+                if (dictionaryCreate == null) dictionaryCreate = new RelayCommand(
+                    (object o) =>
+                    {
+                        new DictionaryCreateWindow().ShowDialog();
+                    });
+                return dictionaryCreate;
+            }
+        }
+
+        private ICommand? dictionaryEdit = null;
+        public ICommand DictionaryEdit
+        {
+            get
+            {
+                if (dictionaryEdit == null) dictionaryEdit = new RelayCommand(
+                    (object o) =>
+                    {
+                        var dictionary = ApplicationHelperSingleton.GetSingleton();
+                        dictionary.dictionaryAction = "Edytuj";
+                        new DictionaryManagementWindow().ShowDialog();
+                    });
+                return dictionaryEdit;
+            }
+        }
+
+        private ICommand? dictionaryDelete = null;
+        public ICommand DictionaryDelete
+        {
+            get
+            {
+                if (dictionaryDelete == null) dictionaryDelete = new RelayCommand(
+                    (object o) =>
+                    {
+                        var dictionary = ApplicationHelperSingleton.GetSingleton();
+                        dictionary.dictionaryAction = "Usuń";
+                        new DictionaryManagementWindow().ShowDialog();
+                    });
+                return dictionaryDelete;
+            }
+        }
+
+        private ICommand? statisticsShow = null;
+        public ICommand StatisticsShow
+        {
+            get
+            {
+                if (statisticsShow == null) statisticsShow = new RelayCommand(
+                    (object o) =>
+                    {
+
+                    });
+                return statisticsShow;
+            }
+        }
+
+        private ICommand? statisticsDelete = null;
+        public ICommand StatisticsDelete
+        {
+            get
+            {
+                if (statisticsDelete == null) statisticsDelete = new RelayCommand(
+                    (object o) =>
+                    {
+
+                    });
+                return statisticsDelete;
+            }
+        }
         #endregion
 
         #region INotifyPropertyChanged Implementation

@@ -64,7 +64,7 @@ namespace LearningApplication.Models
             using (var context = new DatabaseContext())
             {
                 
-                var session = SessionHelperSingleton.GetSingleton();
+                var session = ApplicationHelperSingleton.GetSingleton();
                 wordsList = context.Words.Where(w => w.CardStackId == session.cardStacks.Id).AsNoTracking().ToList();
             }
         }
