@@ -19,7 +19,7 @@ namespace LearningApplication.ViewModels
 
         Models.Session session = new Models.Session();
         public static bool showExitPrompt = false;
-        public SessionYesNoViewModel() 
+        public SessionYesNoViewModel()
         {
             NumberAllAnswers = 0;
             NumberCorrectAnswers = 0;
@@ -27,23 +27,8 @@ namespace LearningApplication.ViewModels
             NumberDictionaryCompleted = "";
             session.totalWords = WordsList.Count;
             WindowName = applicationHelper.sessionDifficulty + " ze słownika: " + applicationHelper.cardStacks.CardStackName;
-            try
-            {
-                AfterClick();
-                if (WordsList.Count == 0) 
-                {
-                    throw new Exception("Dictionary does not have any word.");
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Słownik nie zawiera słów.");
-                foreach (Window item in System.Windows.Application.Current.Windows)
-                {
-                    if (item.DataContext == this) item.Close();
-                }
-            }
             showExitPrompt = true;
+            AfterClick();
         }
 
         ApplicationHelperSingleton applicationHelper = ApplicationHelperSingleton.GetSingleton();
@@ -61,7 +46,7 @@ namespace LearningApplication.ViewModels
                 OnPropertyChanged(nameof(WindowName));
             }
         }
-        
+
         public List<Words> WordsList
         {
             get { return session.wordsList; }
@@ -106,7 +91,7 @@ namespace LearningApplication.ViewModels
             }
             set
             {
-                if(NumberAllAnswers > 0)
+                if (NumberAllAnswers > 0)
                 {
                     session.numberPercent = Math.Round(((double)NumberCorrectAnswers / (double)NumberAllAnswers) * 100, 2).ToString() + "%";
                 }
@@ -126,9 +111,9 @@ namespace LearningApplication.ViewModels
             }
             set
             {
-                if(NumberAllAnswers > 0)
+                if (NumberAllAnswers > 0)
                 {
-                session.numberDictionaryCompleted = Math.Round(((double)NumberCorrectAnswers / (double)session.totalWords) * 100, 2).ToString() + "%";
+                    session.numberDictionaryCompleted = Math.Round(((double)NumberCorrectAnswers / (double)session.totalWords) * 100, 2).ToString() + "%";
                 }
                 else
                 {
@@ -176,7 +161,7 @@ namespace LearningApplication.ViewModels
                 if (showWord == null) showWord = new RelayCommand(
                     (object o) =>
                     {
-                        WordTranslated = WordsList[session.indexRandom].WordEnglish;
+                        WordTranslated = WordsList[session.indexRandom].WordTranslated;
                     });
                 return showWord;
             }
@@ -238,11 +223,13 @@ namespace LearningApplication.ViewModels
             if (WordsList.Count == 0)
             {
                 Entities.SessionStatistics stats = new SessionStatistics()
-                { SessionDate = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy")),
-                Difficulty = applicationHelper.sessionDifficulty,
-                GoodAnswers = NumberCorrectAnswers,
-                AllAnswers = NumberAllAnswers,
-                CardStackId = applicationHelper.cardStacks.Id};
+                {
+                    SessionDate = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy")),
+                    Difficulty = applicationHelper.sessionDifficulty,
+                    GoodAnswers = NumberCorrectAnswers,
+                    AllAnswers = NumberAllAnswers,
+                    CardStackId = applicationHelper.cardStacks.Id
+                };
                 using (var context = new DatabaseContext())
                 {
                     await context.SessionStatistics.AddAsync(stats);

@@ -28,21 +28,10 @@ namespace LearningApplication.ViewModels
             NumberDictionaryCompleted = "";
             session.totalWords = WordsList.Count;
             WindowName = applicationHelper.sessionDifficulty + " ze słownika: " + applicationHelper.cardStacks.CardStackName;
-            try
-            {
-                AfterClick();
-            }
-            catch
-            {
-                MessageBox.Show("Słownik nie zawiera słów.");
-                foreach (Window item in System.Windows.Application.Current.Windows)
-                {
-                    if (item.DataContext == this) item.Close();
-                }
-            }
             showExitPrompt = true;
             AnswerBackground = Brushes.White;
             ButtonText = "Sprawdź";
+            AfterClick();
         }
 
 
@@ -207,7 +196,7 @@ namespace LearningApplication.ViewModels
                         if (ButtonText == "Sprawdź")
                         {
                             //Correct answer
-                            if (WordTranslated.ToLower().Trim() == WordsList[session.indexRandom].WordEnglish)
+                            if (WordTranslated.ToLower().Trim() == WordsList[session.indexRandom].WordTranslated)
                             {
                                 isCorrect = true;
                                 AnswerBackground = Brushes.LightGreen;
@@ -220,7 +209,7 @@ namespace LearningApplication.ViewModels
                                 AnswerBackground = Brushes.IndianRed;
                                 ButtonText = "Następny";
                                 var usersAnswer = WordTranslated;
-                                WordTranslated = string.Format("Twoja odpowiedź: {0}\nPoprawna odpowiedź: {1}", usersAnswer, WordsList[session.indexRandom].WordEnglish);
+                                WordTranslated = string.Format("Twoja odpowiedź: {0}\nPoprawna odpowiedź: {1}", usersAnswer, WordsList[session.indexRandom].WordTranslated);
                             }
                         }
                         //Button text next

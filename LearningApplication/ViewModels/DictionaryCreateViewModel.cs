@@ -108,7 +108,7 @@ namespace LearningApplication.ViewModels
                              {
                                  if (item.DataContext == this) item.Close();
                              }
-                             //Otwiera się edit dictionary
+                             new DictionaryEditWindow().ShowDialog();
                          }
 
                      });

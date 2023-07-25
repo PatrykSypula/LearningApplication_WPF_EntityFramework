@@ -133,11 +133,11 @@ namespace LearningApplication.ViewModels
                          {
                              if (dictionary.dictionaryAction == "Edytuj")
                              {
-                                 //new DictionaryEditWindow().ShowDialog();
                                  foreach (Window item in System.Windows.Application.Current.Windows)
                                  {
                                      if (item.DataContext == this) item.Close();
                                  }
+                                 new DictionaryEditWindow().ShowDialog();
                              }
                              else
                              {

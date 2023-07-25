@@ -26,19 +26,8 @@ namespace LearningApplication.ViewModels
             NumberDictionaryCompleted = "";
             session.totalWords = WordsList.Count;
             WindowName = applicationHelper.sessionDifficulty + " ze słownika: " + applicationHelper.cardStacks.CardStackName;
-            try
-            {
-                AfterClick();
-            }
-            catch
-            {
-                MessageBox.Show("Słownik nie zawiera słów.");
-                foreach (Window item in System.Windows.Application.Current.Windows)
-                {
-                    if (item.DataContext == this) item.Close();
-                }
-            }
             showExitPrompt = true;
+            AfterClick();
         }
 
 
@@ -171,7 +160,7 @@ namespace LearningApplication.ViewModels
                     (object o) =>
                     {
                         //Correct answer
-                        if (WordTranslated.ToLower().Trim() == WordsList[session.indexRandom].WordEnglish)
+                        if (WordTranslated.ToLower().Trim() == WordsList[session.indexRandom].WordTranslated)
                         {
                             WordTranslated = "";
                             WordsList.RemoveAt(session.indexRandom);

@@ -13,8 +13,13 @@ namespace LearningApplication.Entities
         [Column(TypeName = "varchar")]
         public string WordPolish { get; set; }
         [Column(TypeName = "varchar")]
-        public string WordEnglish { get; set; }
+        public string WordTranslated { get; set; }
         public int CardStackId { get; set; }
         public CardStacks CardStack { get; set; }
+
+        public override string? ToString()
+        {
+            return Id+" "+WordPolish +" "+ WordTranslated +" "+CardStackId;
+        }
     }
 }

@@ -24,7 +24,7 @@
             <RowDefinition />
             <RowDefinition Height="120"/>
         </Grid.RowDefinitions>
-        <DataGrid HorizontalAlignment="Stretch" Grid.Row="0" FontSize="20" Grid.RowSpan="3" VerticalAlignment="Top" x:Name="DataGridCardStack" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" CanUserAddRows="False" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding CardStackList}">
+        <DataGrid HorizontalAlignment="Stretch" Grid.Row="0" FontSize="20" Grid.RowSpan="3" VerticalAlignment="Top" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" CanUserAddRows="False" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding CardStackList}">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Wybierz słownik" Width="*" Binding="{Binding CardStackName}"/>
             </DataGrid.Columns>
