@@ -21,7 +21,10 @@ namespace LearningApplication.Models
         {
             using (var context = new DatabaseContext())
             {
-                cardStackList = context.CardStacks.AsNoTracking().ToList();
+                cardStackList = (from c in context.CardStacks
+                             join w in context.Words on c.Id equals w.CardStackId
+                             where c.Id == w.CardStackId
+                             select c).Distinct().ToList();
             }
         }
     }

@@ -12,9 +12,9 @@ TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\App.xaml
 7-1294475406
 
-27-261763272
+28-1354426777
 225-406134218
 Views\ChooseDictionaryWindow.xaml;Views\DictionaryCreateWindow.xaml;Views\DictionaryManagementWindow.xaml;Views\MainWindow.xaml;Views\SessionInputNoReturnsWindow.xaml;Views\SessionInputWithReturnsWindow.xaml;Views\SessionYesNoWindow.xaml;
 
-True
+False
 

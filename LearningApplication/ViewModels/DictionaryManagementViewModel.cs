@@ -16,7 +16,7 @@ namespace LearningApplication.ViewModels
     {
         #region Binding and Fields
 
-        Models.ChooseDictionary chooseDictionary = new Models.ChooseDictionary();
+        Models.DictionaryManagement chooseDictionary = new Models.DictionaryManagement();
 
         public DictionaryManagementViewModel()
         {

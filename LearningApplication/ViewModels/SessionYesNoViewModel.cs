@@ -30,6 +30,10 @@ namespace LearningApplication.ViewModels
             try
             {
                 AfterClick();
+                if (WordsList.Count == 0) 
+                {
+                    throw new Exception("Dictionary does not have any word.");
+                }
             }
             catch
             {
@@ -41,6 +45,7 @@ namespace LearningApplication.ViewModels
             }
             showExitPrompt = true;
         }
+
         ApplicationHelperSingleton applicationHelper = ApplicationHelperSingleton.GetSingleton();
 
         private string windowName;
