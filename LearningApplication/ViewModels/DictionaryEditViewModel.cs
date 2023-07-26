@@ -80,8 +80,11 @@ namespace LearningApplication.ViewModels
             {
                 editDictionary.selectedItem = value;
                 OnPropertyChanged(nameof(SelectedItem));
-                WordPolishInput = SelectedItem.WordPolish;
-                WordTranslatedInput = SelectedItem.WordTranslated;
+                if (SelectedItem != null)
+                {
+                    WordPolishInput = SelectedItem.WordPolish;
+                    WordTranslatedInput = SelectedItem.WordTranslated;
+                }
             }
         }
 
@@ -111,7 +114,9 @@ namespace LearningApplication.ViewModels
                                 context.SaveChanges();
                                 WordsList.Add(word);
                             }
-                            
+                            WordPolishInput = "";
+                            WordTranslatedInput = "";
+
                         }
 
                     });
@@ -127,7 +132,26 @@ namespace LearningApplication.ViewModels
                 if (wordEdit == null) wordEdit = new RelayCommand(
                     (object o) =>
                     {
+                        Entities.Words word = new Words()
+                        {
+                            Id = SelectedItem.Id,
+                            WordPolish = WordPolishInput,
+                            WordTranslated = WordTranslatedInput,
+                            CardStackId = applicationHelper.cardStacks.Id
 
+                        };
+                        using (var context = new DatabaseContext())
+                        {
+                            var index = WordsList.IndexOf(SelectedItem);
+                            if (index >= 0)
+                            {
+                                WordsList[index] = word;
+                            }
+                            context.Words.Update(word);
+                            context.SaveChanges();
+                        }
+                        WordPolishInput = "";
+                        WordTranslatedInput = "";
                     },
                     (object o) =>
                     {
@@ -145,13 +169,53 @@ namespace LearningApplication.ViewModels
                 if (wordDelete == null) wordDelete = new RelayCommand(
                     (object o) =>
                     {
+                        var result = MessageBox.Show("Czy na pewno chcesz usunąć słowo "+SelectedItem.WordPolish+" - "+SelectedItem.WordTranslated+"? Dokonane zmiany nie mogą zostać cofnięte!", "Usunięcie słowa", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                        if (result == MessageBoxResult.Yes)
+                        {
+                            Entities.Words word = new Words()
+                            {
+                                Id = SelectedItem.Id,
+                                WordPolish = WordPolishInput,
+                                WordTranslated = WordTranslatedInput,
+                                CardStackId = applicationHelper.cardStacks.Id
 
+                            };
+                            using (var context = new DatabaseContext())
+                            {
+                                var index = WordsList.IndexOf(SelectedItem);
+                                if (index >= 0)
+                                {
+                                    WordsList.RemoveAt(index);
+                                }
+                                context.Words.Remove(word);
+                                context.SaveChanges();
+                            }
+                            WordPolishInput = "";
+                            WordTranslatedInput = "";
+                        }
                     },
                     (object o) =>
                     {
                         return WordPolishInput != "" && WordTranslatedInput != "" && SelectedItem != null;
                     });
                 return wordDelete;
+            }
+        }
+
+        private ICommand? closeWindow = null;
+        public ICommand CloseWindow
+        {
+            get
+            {
+                if (closeWindow == null) closeWindow = new RelayCommand(
+                     (object o) =>
+                     {
+                         foreach (Window item in System.Windows.Application.Current.Windows)
+                         {
+                             if (item.DataContext == this) item.Close();
+                         }
+                     });
+                return closeWindow;
             }
         }
 

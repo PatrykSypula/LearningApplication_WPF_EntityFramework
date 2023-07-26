@@ -16,10 +16,5 @@ namespace LearningApplication.Entities
         public string WordTranslated { get; set; }
         public int CardStackId { get; set; }
         public CardStacks CardStack { get; set; }
-
-        public override string? ToString()
-        {
-            return Id+" "+WordPolish +" "+ WordTranslated +" "+CardStackId;
-        }
     }
 }

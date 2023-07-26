@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows;
 using System.Windows.Media;
+using LearningApplication.Models;
 
 namespace LearningApplication.ViewModels
 {
@@ -142,10 +143,32 @@ namespace LearningApplication.ViewModels
                              }
                              else
                              {
-                                 var result = MessageBox.Show("Słownik \"" + SelectedItem.CardStackName + "\" zostanie usunięty wraz z jego zawartością! Czy na pewno chcesz kontynuować?", "Usunięcie słownika", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+                                 var result = MessageBox.Show("Słownik \"" + SelectedItem.CardStackName + "\" zostanie usunięty wraz z jego słowami oraz statystykami! Czy na pewno chcesz kontynuować?", "Usunięcie słownika", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                                  if (result == MessageBoxResult.Yes)
                                  {
+                                     List<Words> wordsList;
+                                     List<SessionStatistics> statsList;
 
+                                     using (var context = new DatabaseContext())
+                                     {
+                                         wordsList = context.Words.Where(w => w.CardStackId == dictionary.cardStacks.Id).ToList();
+                                         foreach (var word in wordsList)
+                                         {
+                                             context.Words.Remove(word);
+                                         }
+                                         statsList = context.SessionStatistics.Where(s => s.CardStackId == dictionary.cardStacks.Id).ToList();
+                                         foreach (var stat in statsList)
+                                         {
+                                             context.SessionStatistics.Remove(stat);
+                                         }
+                                         context.CardStacks.Remove(dictionary.cardStacks);
+                                         context.SaveChanges();
+                                         foreach (Window item in System.Windows.Application.Current.Windows)
+                                         {
+                                             if (item.DataContext == this) item.Close();
+                                         }
+                                         MessageBox.Show("Pomyślnie usunięto słownik.");
+                                     }
                                  }
                              }
                          }
@@ -160,7 +183,7 @@ namespace LearningApplication.ViewModels
                              {
                                  message = "usunąć";
                              }
-                                 MessageBox.Show("Nie można "+message+" słownika standardowego.", "Czynność anulowana.");
+                             MessageBox.Show("Nie można " + message + " słownika standardowego.", "Czynność anulowana.");
                          }
                      },
                      (object o) =>

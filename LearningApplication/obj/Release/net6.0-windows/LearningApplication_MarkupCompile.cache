@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Release\net6.0-windows\
+C:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\obj\Release\net6.0-windows\
 LearningApplication
 none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
-C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\App.xaml
+C:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\App.xaml
 8-1637550452
 
-291612487622
+30-259365286
 225-406134218
 Views\ChooseDictionaryWindow.xaml;Views\DictionaryCreateWindow.xaml;Views\DictionaryEditWindow.xaml;Views\DictionaryManagementWindow.xaml;Views\MainWindow.xaml;Views\SessionInputNoReturnsWindow.xaml;Views\SessionInputWithReturnsWindow.xaml;Views\SessionYesNoWindow.xaml;
 
