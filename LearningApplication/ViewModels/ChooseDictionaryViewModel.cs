@@ -39,6 +39,7 @@ namespace LearningApplication.ViewModels
             set
             {
                 chooseDictionary.selectedItem = value;
+                OnPropertyChanged(nameof(SelectedItem));
             }
         }
 

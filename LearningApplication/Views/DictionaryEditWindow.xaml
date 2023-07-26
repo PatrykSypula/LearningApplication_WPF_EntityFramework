@@ -16,7 +16,7 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="{Binding Title}" Height="550" Width="1150">
+        Title="{Binding WindowName}" Height="550" Width="1150">
     <Grid>
         <Button IsEnabled="False" VerticalAlignment="Top" Opacity="1" Content="Słowo po polsku" Background="White" HorizontalAlignment="Left" Margin="50,30,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="180" Height="40" FontSize="20" Foreground="Black"/>
         <Button IsEnabled="False" VerticalAlignment="Top" Opacity="1" Grid.RowSpan="3" Height="135" Width="400" Background="White" HorizontalAlignment="Left" Margin="50,80,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" FontSize="30" Foreground="Black"/>
@@ -32,9 +32,9 @@
                 <KeyBinding Command="{Binding WordAdd}"  Key="Enter" />
             </TextBox.InputBindings>
         </TextBox>
-        <Button Width="120" Height="60" Margin="50,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding WordAdd}" IsDefault="True" Content="Dodaj"  materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" />
+        <Button Width="120" Height="60" Margin="50,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding WordAdd}" Content="Dodaj"  materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" />
         <Button Width="120" Height="60" Margin="190,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding WordEdit}" Content="Zamień"  materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="Orange" BorderThickness="0"/>
-        <Button Width="120" Height="60" Margin="330,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding WordDelete}" IsCancel="True" Content="Usuń" materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="Red" BorderThickness="0"/>
+        <Button Width="120" Height="60" Margin="330,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding WordDelete}" Content="Usuń" materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="Red" BorderThickness="0"/>
 
         <DataGrid HorizontalAlignment="Left" Margin="500,30,0,0" Width="600" Height="380" FontSize="20" VerticalAlignment="Top" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" CanUserAddRows="False" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding WordsList, Mode=TwoWay}">
             <DataGrid.Columns>
@@ -42,6 +42,6 @@
                 <DataGridTextColumn Header="Tłumaczenie" Width="*" Binding="{Binding WordTranslated}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Width="120" Height="60" Margin="980,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding CloseWindow}" IsCancel="True" Content="Zamknij" materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="#FFFF5454" BorderBrush="#FFFF5454"/>
+        <Button Width="120" Height="60" Margin="980,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding CloseWindow}" Content="Zamknij" materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="#FFFF5454" BorderBrush="#FFFF5454"/>
     </Grid>
 </Window>

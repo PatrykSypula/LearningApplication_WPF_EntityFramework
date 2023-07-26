@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Windows.Input;
 using System.Windows;
 using System.Collections.ObjectModel;
+using LearningApplication.Models;
 
 namespace LearningApplication.ViewModels
 {
@@ -78,6 +79,7 @@ namespace LearningApplication.ViewModels
             set
             {
                 editDictionary.selectedItem = value;
+                OnPropertyChanged(nameof(SelectedItem));
                 WordPolishInput = SelectedItem.WordPolish;
                 WordTranslatedInput = SelectedItem.WordTranslated;
             }
@@ -109,9 +111,9 @@ namespace LearningApplication.ViewModels
                                 context.SaveChanges();
                                 WordsList.Add(word);
                             }
-                            WordPolishInput = "";
-                            WordTranslatedInput = "";
+                            
                         }
+
                     });
                 return wordAdd;
             }
