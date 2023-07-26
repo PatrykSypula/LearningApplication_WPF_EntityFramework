@@ -8,7 +8,7 @@ using LearningApplication.Models;
 
 namespace LearningApplication.ViewModels
 {
-    class DictionaryEditViewModel
+    class DictionaryEditViewModel : INotifyPropertyChanged
     {
         #region Binding and Fields
 

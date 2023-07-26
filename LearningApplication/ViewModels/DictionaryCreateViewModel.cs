@@ -12,7 +12,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace LearningApplication.ViewModels
 {
-    public class DictionaryCreateViewModel
+    public class DictionaryCreateViewModel : INotifyPropertyChanged
     {
         #region Binding and Fields
 
