@@ -36,12 +36,17 @@
         <Button Width="120" Height="60" Margin="190,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding WordEdit}" Content="Zamień"  materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="Orange" BorderThickness="0"/>
         <Button Width="120" Height="60" Margin="330,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding WordDelete}" Content="Usuń" materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="Red" BorderThickness="0"/>
 
-        <DataGrid HorizontalAlignment="Left" Margin="500,30,0,0" Width="600" Height="380" FontSize="20" VerticalAlignment="Top" SelectedItem="{Binding SelectedItem}" CanUserAddRows="False" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding WordsList}">
+        <DataGrid HorizontalAlignment="Left" Focusable="False" Margin="500,30,0,0" Width="600" Height="380" FontSize="20" VerticalAlignment="Top" SelectedItem="{Binding SelectedItem}" CanUserAddRows="False" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding WordsList}">
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell" BasedOn="{StaticResource MaterialDesignDataGridCell}">
+                    <Setter Property="Focusable" Value="False"/>
+                </Style>
+            </DataGrid.CellStyle>
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Słowo po polsku" Width="*" Binding="{Binding WordPolish}"/>
-                <DataGridTextColumn Header="Tłumaczenie" Width="*" Binding="{Binding WordTranslated}"/>
+                <DataGridTextColumn Header="Słowo po polsku" Width="*" Binding="{Binding WordPolish}" />
+                <DataGridTextColumn Header="Tłumaczenie" Width="*" Binding="{Binding WordTranslated}" />
             </DataGrid.Columns>
         </DataGrid>
-        <Button Width="120" Height="60" Margin="980,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding CloseWindow}" Content="Zamknij" materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="#FFFF5454" BorderBrush="#FFFF5454"/>
+        <Button Width="120" Height="60" Margin="980,0,0,30" Focusable="False" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding CloseWindow}" Content="Zamknij" materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="#FFFF5454" BorderBrush="#FFFF5454"/>
     </Grid>
 </Window>

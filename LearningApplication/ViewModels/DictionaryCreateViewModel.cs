@@ -83,34 +83,40 @@ namespace LearningApplication.ViewModels
                 if (createDictionary == null) createDictionary = new RelayCommand(
                      (object o) =>
                      {
-                         var canCreateDictionary = true;
-                         foreach (var dictionary in CardStackList)
+                         if (DictionaryName != null && DictionaryName != "")
                          {
-                             if (dictionary.CardStackName.ToLower().Trim() == DictionaryName.ToLower().Trim())
+                             var canCreateDictionary = true;
+                             foreach (var dictionary in CardStackList)
                              {
-                                 MessageBox.Show("Słownik o takiej nazwie już istnieje", "Błąd podczas dodawania słownika.");
-                                 canCreateDictionary = false;
-                                 break;
+                                 if (dictionary.CardStackName.ToLower().Trim() == DictionaryName.ToLower().Trim())
+                                 {
+                                     MessageBox.Show("Słownik o takiej nazwie już istnieje", "Błąd podczas dodawania słownika.");
+                                     canCreateDictionary = false;
+                                     break;
+                                 }
+                             }
+                             if (canCreateDictionary)
+                             {
+                                 var dictionary = new CardStacks() { CardStackName = DictionaryName, IsDefaultCardStack = 0 };
+                                 using (var context = new DatabaseContext())
+                                 {
+                                     context.CardStacks.Add(dictionary);
+                                     context.SaveChanges();
+                                     SelectedItem = dictionary;
+                                     var dictionaryhelper = ApplicationHelperSingleton.GetSingleton();
+                                     dictionaryhelper.cardStacks = SelectedItem;
+                                 }
+                                 foreach (Window item in System.Windows.Application.Current.Windows)
+                                 {
+                                     if (item.DataContext == this) item.Close();
+                                 }
+                                 new DictionaryEditWindow().ShowDialog();
                              }
                          }
-                         if (canCreateDictionary)
+                         else
                          {
-                             var dictionary = new CardStacks() { CardStackName = DictionaryName, IsDefaultCardStack = 0 };
-                             using (var context = new DatabaseContext())
-                             {
-                                 context.CardStacks.Add(dictionary);
-                                 context.SaveChanges();
-                                 SelectedItem = dictionary;
-                                 var dictionaryhelper = ApplicationHelperSingleton.GetSingleton();
-                                 dictionaryhelper.cardStacks = SelectedItem;
-                             }
-                             foreach (Window item in System.Windows.Application.Current.Windows)
-                             {
-                                 if (item.DataContext == this) item.Close();
-                             }
-                             new DictionaryEditWindow().ShowDialog();
+                             MessageBox.Show("Wprowadź nazwę słownika.");
                          }
-
                      });
                 return createDictionary;
             }

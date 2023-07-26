@@ -25,7 +25,7 @@
                 <KeyBinding Command="{Binding CreateDictionary}"  Key="Enter" />
             </TextBox.InputBindings>
         </TextBox>
-        <Button Width="180" Height="60" Margin="50,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding CreateDictionary}" IsDefault="True" Content="Dodaj"  materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" />
-        <Button Width="180" Height="60" Margin="270,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding CloseWindow}" IsCancel="True" Content="Zamknij" materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="#FFFF5454" BorderBrush="#FFFF5454"/>
+        <Button Width="180" Height="60" Focusable="False" Margin="50,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding CreateDictionary}" IsDefault="True" Content="Dodaj"  materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" />
+        <Button Width="180" Height="60" Focusable="False" Margin="270,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding CloseWindow}" IsCancel="True" Content="Zamknij" materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="#FFFF5454" BorderBrush="#FFFF5454"/>
     </Grid>
 </Window>
