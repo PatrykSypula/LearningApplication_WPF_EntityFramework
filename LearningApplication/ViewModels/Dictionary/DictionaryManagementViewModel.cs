@@ -25,13 +25,13 @@ namespace LearningApplication.ViewModels.Dictionary
             {
                 ButtonText = "Edytuj";
                 ButtonColor = Brushes.Orange;
-                Title = "Wybierz słownik do edycji.";
+                WindowName = "Wybór słownik do edycji";
             }
             else
             {
                 ButtonText = "Usuń";
                 ButtonColor = Brushes.Red;
-                Title = "Wybierz słownik do usunięcia.";
+                WindowName = "Wybór słownik do usunięcia";
             }
         }
 
@@ -45,7 +45,7 @@ namespace LearningApplication.ViewModels.Dictionary
             }
         }
         ApplicationHelperSingleton dictionary = ApplicationHelperSingleton.GetSingleton();
-        public CardStacks? SelectedItem
+        public CardStacks SelectedItem
         {
             get
             {
@@ -58,8 +58,8 @@ namespace LearningApplication.ViewModels.Dictionary
             }
         }
 
-        private string? buttonText;
-        public string? ButtonText
+        private string buttonText;
+        public string ButtonText
         {
             get
             {
@@ -72,7 +72,7 @@ namespace LearningApplication.ViewModels.Dictionary
             }
         }
 
-        private Brush? buttonColor;
+        private Brush buttonColor;
         public Brush ButtonColor
         {
             get
@@ -86,17 +86,17 @@ namespace LearningApplication.ViewModels.Dictionary
             }
         }
 
-        private string? title;
-        public string? Title
+        private string windowName;
+        public string WindowName
         {
             get
             {
-                return title;
+                return windowName;
             }
             set
             {
-                title = value;
-                OnPropertyChanged(nameof(Title));
+                windowName = value;
+                OnPropertyChanged(nameof(WindowName));
             }
         }
 
@@ -104,7 +104,7 @@ namespace LearningApplication.ViewModels.Dictionary
 
         #region Commands
 
-        private ICommand? closeWindow = null;
+        private ICommand closeWindow = null;
         public ICommand CloseWindow
         {
             get
@@ -121,7 +121,7 @@ namespace LearningApplication.ViewModels.Dictionary
             }
         }
 
-        private ICommand? dictionaryAction = null;
+        private ICommand dictionaryAction = null;
         public ICommand DictionaryAction
         {
             get

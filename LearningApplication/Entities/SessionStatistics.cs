@@ -15,6 +15,8 @@ namespace LearningApplication.Entities
         public string Difficulty { get; set; }
         public int GoodAnswers { get; set; }
         public int AllAnswers { get; set; }
+        [Column(TypeName = "varchar")]
+        public string Percentage { get; set; }
         public int CardStackId { get; set; }
         public CardStacks CardStack { get; set; }
     }

@@ -4,11 +4,37 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LearningApplication.Views"
+        xmlns:vm="clr-namespace:LearningApplication.ViewModels"
         mc:Ignorable="d"
-        Title="StatisticsFromDictionaryWindow" Height="450" Width="800">
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="{Binding WindowName}" Height="600" Width="700">
     <Grid>
-        
-        
-        
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <DataGrid HorizontalAlignment="Stretch" Grid.Row="0" FontSize="20" Grid.RowSpan="3" VerticalAlignment="Top" x:Name="DataGridCardStack" SelectedItem="{Binding SelectedItem, Mode=TwoWay}" CanUserAddRows="False" IsReadOnly="True" AutoGenerateColumns="False" ItemsSource="{Binding StatisticList}">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Poziom trudności" Width="3*" Binding="{Binding Difficulty}"/>
+                <DataGridTextColumn Header="Wynik" Width="2*" Binding="{Binding Percentage}"/>
+                <DataGridTextColumn Header="Data" Width="4*" Binding="{Binding SessionDate}"/>
+            </DataGrid.Columns>
+            <DataGrid.InputBindings>
+                <MouseBinding Gesture="LeftDoubleClick" Command="{Binding StatisticAction}"/>
+            </DataGrid.InputBindings>
+        </DataGrid>
+        <Button Width="120" Height="40" Margin="60,0,0,0" Background="{Binding ButtonColor}" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding StatisticAction}" IsDefault="True" Content="{Binding ButtonText}"  materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" BorderThickness="0" Foreground="{DynamicResource MaterialDesignBody}" />
+        <Button Width="120" Height="40" Margin="0,0,60,0" HorizontalAlignment="Right" Grid.Row="4" Command="{Binding CloseWindow}" IsCancel="True" Content="Zamknij" materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="#FFFF5454" BorderBrush="#FFFF5454"/>
     </Grid>
 </Window>

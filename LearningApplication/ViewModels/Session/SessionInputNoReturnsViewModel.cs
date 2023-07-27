@@ -81,7 +81,7 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        public string? NumberPercent
+        public string NumberPercent
         {
             get
             {
@@ -101,7 +101,7 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        public string? NumberDictionaryCompleted
+        public string NumberDictionaryCompleted
         {
             get
             {
@@ -121,7 +121,7 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        public string? WordPolish
+        public string WordPolish
         {
             get
             {
@@ -134,7 +134,7 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        public string? WordTranslated
+        public string WordTranslated
         {
             get
             {
@@ -151,7 +151,7 @@ namespace LearningApplication.ViewModels.Session
 
         #region Commands
 
-        private ICommand? answerNext = null;
+        private ICommand answerNext = null;
         public ICommand AnswerNext
         {
             get
@@ -198,10 +198,11 @@ namespace LearningApplication.ViewModels.Session
             {
                 SessionStatistics stats = new SessionStatistics()
                 {
-                    SessionDate = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy")),
+                    SessionDate = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy HH:mm")),
                     Difficulty = applicationHelper.sessionDifficulty,
                     GoodAnswers = NumberCorrectAnswers,
                     AllAnswers = NumberAllAnswers,
+                    Percentage = NumberPercent,
                     CardStackId = applicationHelper.cardStacks.Id
                 };
                 using (var context = new DatabaseContext())

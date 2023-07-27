@@ -13,9 +13,9 @@ namespace LearningApplication.Models.Dictionary
     class EditDictionary
     {
         public ObservableCollection<Words> wordsList = new ObservableCollection<Words>();
-        public Words? selectedItem;
-        public string? wordPolish;
-        public string? wordTranslated;
+        public Words selectedItem;
+        public string wordPolish;
+        public string wordTranslated;
         public EditDictionary()
         {
             GetDataFromDb();
@@ -25,7 +25,7 @@ namespace LearningApplication.Models.Dictionary
             var editWords = ApplicationHelperSingleton.GetSingleton();
             using (var context = new DatabaseContext())
             {
-                var wordList = context.Words.Where(w => w.CardStackId == editWords.cardStacks.Id).ToList();
+                var wordList = context.Words.Where(w => w.CardStackId == editWords.cardStacks.Id).AsNoTracking().ToList();
                 foreach (var word in wordList)
                 {
                     wordsList.Add(word);

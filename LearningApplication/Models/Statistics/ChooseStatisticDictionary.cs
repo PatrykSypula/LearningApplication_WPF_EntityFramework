@@ -10,7 +10,7 @@ namespace LearningApplication.Models.Statistics
     public class ChooseStatisticDictionary
     {
         public List<CardStacks> statisticDictionaryList;
-        public CardStacks? selectedItem;
+        public CardStacks selectedItem;
 
         public ChooseStatisticDictionary()
         {

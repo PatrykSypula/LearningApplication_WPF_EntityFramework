@@ -85,7 +85,7 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        public string? NumberPercent
+        public string NumberPercent
         {
             get
             {
@@ -105,7 +105,7 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        public string? NumberDictionaryCompleted
+        public string NumberDictionaryCompleted
         {
             get
             {
@@ -125,7 +125,7 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        public string? WordPolish
+        public string WordPolish
         {
             get
             {
@@ -138,7 +138,7 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        public string? WordTranslated
+        public string WordTranslated
         {
             get
             {
@@ -151,8 +151,8 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        private string? buttonText;
-        public string? ButtonText
+        private string buttonText;
+        public string ButtonText
         {
             get
             {
@@ -184,7 +184,7 @@ namespace LearningApplication.ViewModels.Session
         #region Commands
 
         private static bool isCorrect = false;
-        private ICommand? answerCheck = null;
+        private ICommand answerCheck = null;
         public ICommand AnswerCheck
         {
             get
@@ -257,10 +257,11 @@ namespace LearningApplication.ViewModels.Session
             {
                 SessionStatistics stats = new SessionStatistics()
                 {
-                    SessionDate = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy")),
+                    SessionDate = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy HH:mm")),
                     Difficulty = applicationHelper.sessionDifficulty,
                     GoodAnswers = NumberCorrectAnswers,
                     AllAnswers = NumberAllAnswers,
+                    Percentage = NumberPercent,
                     CardStackId = applicationHelper.cardStacks.Id
                 };
                 using (var context = new DatabaseContext())

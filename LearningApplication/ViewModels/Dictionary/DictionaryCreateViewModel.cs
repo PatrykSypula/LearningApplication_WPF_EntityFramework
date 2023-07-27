@@ -28,7 +28,7 @@ namespace LearningApplication.ViewModels.Dictionary
             }
         }
 
-        public CardStacks? SelectedItem
+        public CardStacks SelectedItem
         {
             get
             {
@@ -49,7 +49,7 @@ namespace LearningApplication.ViewModels.Dictionary
             }
             set
             {
-                dictionaryName = value;
+                dictionaryName = value.Trim();
                 OnPropertyChanged(nameof(DictionaryName));
             }
         }
@@ -58,7 +58,7 @@ namespace LearningApplication.ViewModels.Dictionary
 
         #region Commands
 
-        private ICommand? closeWindow = null;
+        private ICommand closeWindow = null;
         public ICommand CloseWindow
         {
             get
@@ -75,7 +75,7 @@ namespace LearningApplication.ViewModels.Dictionary
             }
         }
 
-        private ICommand? createDictionary = null;
+        private ICommand createDictionary = null;
         public ICommand CreateDictionary
         {
             get

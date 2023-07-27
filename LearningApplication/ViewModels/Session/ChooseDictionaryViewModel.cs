@@ -30,7 +30,7 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        public CardStacks? SelectedItem
+        public CardStacks SelectedItem
         {
             get
             {
@@ -47,7 +47,7 @@ namespace LearningApplication.ViewModels.Session
 
         #region Commands
 
-        private ICommand? closeWindow = null;
+        private ICommand closeWindow = null;
         public ICommand CloseWindow
         {
             get
@@ -64,7 +64,7 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        private ICommand? openDictionary = null;
+        private ICommand openDictionary = null;
         public ICommand OpenDictionary
         {
             get

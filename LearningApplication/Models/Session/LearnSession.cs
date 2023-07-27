@@ -17,10 +17,10 @@ namespace LearningApplication.Models.Session
         public int totalWords;
         public int numberAllAnswers;
         public int numberCorrectAnswers;
-        public string? numberPercent;
-        public string? numberDictionaryCompleted;
-        public string? wordPolish;
-        public string? wordTranslated;
+        public string numberPercent;
+        public string numberDictionaryCompleted;
+        public string wordPolish;
+        public string wordTranslated;
         public List<Words> wordsList;
 
         public LearnSession()
@@ -41,7 +41,7 @@ namespace LearningApplication.Models.Session
             indexRandom = random.Next(wordsList.Count);
             return wordsList[indexRandom];
         }
-        public Words? PrintWord()
+        public Words PrintWord()
         {
             Random random = new Random();
             indexRandom = random.Next(wordsList.Count);

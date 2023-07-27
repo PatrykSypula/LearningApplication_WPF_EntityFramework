@@ -11,7 +11,7 @@ namespace LearningApplication.Models.Dictionary
     class DictionaryManagement
     {
         public List<CardStacks> cardStackList;
-        public CardStacks? selectedItem;
+        public CardStacks selectedItem;
 
         public DictionaryManagement()
         {

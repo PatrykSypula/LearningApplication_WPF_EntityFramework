@@ -27,6 +27,7 @@ namespace LearningApplication
         private ApplicationHelperSingleton() { }
 
         public CardStacks cardStacks { get; set; }
+        public SessionStatistics sessionStatistics { get; set; }
         public string sessionDifficulty { get; set; }
         public string dictionaryAction { get; set; }
         public string statisticAction { get; set; }

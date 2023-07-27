@@ -16,7 +16,7 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="Wybierz słownik ze statystykami." Height="600" Width="500">
+        Title="Wybór słownika ze statystykami." Height="600" Width="500">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition />

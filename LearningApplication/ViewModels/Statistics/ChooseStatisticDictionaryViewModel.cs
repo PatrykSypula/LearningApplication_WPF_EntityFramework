@@ -28,7 +28,7 @@ namespace LearningApplication.ViewModels.Statistics
                 OnPropertyChanged(nameof(StatisticDictionaryList));
             }
         }
-        public CardStacks? SelectedItem
+        public CardStacks SelectedItem
         {
             get
             {
@@ -45,7 +45,7 @@ namespace LearningApplication.ViewModels.Statistics
 
         #region Commands
 
-        private ICommand? closeWindow = null;
+        private ICommand closeWindow = null;
         public ICommand CloseWindow
         {
             get
@@ -62,7 +62,7 @@ namespace LearningApplication.ViewModels.Statistics
             }
         }
 
-        private ICommand? statisticOpen = null;
+        private ICommand statisticOpen = null;
         public ICommand StatisticOpen
         {
             get

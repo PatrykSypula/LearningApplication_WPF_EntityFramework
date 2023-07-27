@@ -10,7 +10,7 @@ namespace LearningApplication.Models.Session
     public class ChooseDictionary
     {
         public List<CardStacks> cardStackList;
-        public CardStacks? selectedItem;
+        public CardStacks selectedItem;
 
         public ChooseDictionary()
         {

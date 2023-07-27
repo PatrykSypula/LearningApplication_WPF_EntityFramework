@@ -83,7 +83,7 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        public string? NumberPercent
+        public string NumberPercent
         {
             get
             {
@@ -103,7 +103,7 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        public string? NumberDictionaryCompleted
+        public string NumberDictionaryCompleted
         {
             get
             {
@@ -123,7 +123,7 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        public string? WordPolish
+        public string WordPolish
         {
             get
             {
@@ -136,7 +136,7 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        public string? WordTranslated
+        public string WordTranslated
         {
             get
             {
@@ -153,7 +153,7 @@ namespace LearningApplication.ViewModels.Session
 
         #region Commands
 
-        private ICommand? showWord = null;
+        private ICommand showWord = null;
         public ICommand ShowWord
         {
             get
@@ -167,7 +167,7 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        private ICommand? answerIncorrect = null;
+        private ICommand answerIncorrect = null;
         public ICommand AnswerIncorrect
         {
             get
@@ -183,7 +183,7 @@ namespace LearningApplication.ViewModels.Session
             }
         }
 
-        private ICommand? answerCorrect = null;
+        private ICommand answerCorrect = null;
         public ICommand AnswerCorrect
         {
             get
@@ -224,10 +224,11 @@ namespace LearningApplication.ViewModels.Session
             {
                 SessionStatistics stats = new SessionStatistics()
                 {
-                    SessionDate = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy")),
+                    SessionDate = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy HH:mm")),
                     Difficulty = applicationHelper.sessionDifficulty,
                     GoodAnswers = NumberCorrectAnswers,
                     AllAnswers = NumberAllAnswers,
+                    Percentage = NumberPercent,
                     CardStackId = applicationHelper.cardStacks.Id
                 };
                 using (var context = new DatabaseContext())

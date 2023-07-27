@@ -44,7 +44,7 @@ namespace LearningApplication.ViewModels.Dictionary
             }
         }
 
-        public string? WordPolishInput
+        public string WordPolishInput
         {
             get
             {
@@ -52,12 +52,12 @@ namespace LearningApplication.ViewModels.Dictionary
             }
             set
             {
-                editDictionary.wordPolish = value;
+                editDictionary.wordPolish = value.Trim();
                 OnPropertyChanged(nameof(WordPolishInput));
             }
         }
 
-        public string? WordTranslatedInput
+        public string WordTranslatedInput
         {
             get
             {
@@ -65,12 +65,12 @@ namespace LearningApplication.ViewModels.Dictionary
             }
             set
             {
-                editDictionary.wordTranslated = value;
+                editDictionary.wordTranslated = value.Trim();
                 OnPropertyChanged(nameof(WordTranslatedInput));
             }
         }
 
-        public Words? SelectedItem
+        public Words SelectedItem
         {
             get
             {
@@ -92,7 +92,7 @@ namespace LearningApplication.ViewModels.Dictionary
 
         #region Commands
 
-        private ICommand? wordAdd = null;
+        private ICommand wordAdd = null;
         public ICommand WordAdd
         {
             get
@@ -100,7 +100,7 @@ namespace LearningApplication.ViewModels.Dictionary
                 if (wordAdd == null) wordAdd = new RelayCommand(
                     (o) =>
                     {
-                        if (WordPolishInput != "" && WordTranslatedInput != "")
+                    if (WordPolishInput != "" && WordTranslatedInput != "" && WordPolishInput != null && WordTranslatedInput != null)
                         {
                             Words word = new Words()
                             {
@@ -118,13 +118,17 @@ namespace LearningApplication.ViewModels.Dictionary
                             WordTranslatedInput = "";
 
                         }
+                        else
+                        {
+                            MessageBox.Show("Wprowadź poprawne słowo");
+                        }
 
                     });
                 return wordAdd;
             }
         }
 
-        private ICommand? wordEdit = null;
+        private ICommand wordEdit = null;
         public ICommand WordEdit
         {
             get
@@ -161,7 +165,7 @@ namespace LearningApplication.ViewModels.Dictionary
             }
         }
 
-        private ICommand? wordDelete = null;
+        private ICommand wordDelete = null;
         public ICommand WordDelete
         {
             get
@@ -172,14 +176,7 @@ namespace LearningApplication.ViewModels.Dictionary
                         var result = MessageBox.Show("Czy na pewno chcesz usunąć słowo " + SelectedItem.WordPolish + " - " + SelectedItem.WordTranslated + "? Dokonane zmiany nie mogą zostać cofnięte!", "Usunięcie słowa", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                         if (result == MessageBoxResult.Yes)
                         {
-                            Words word = new Words()
-                            {
-                                Id = SelectedItem.Id,
-                                WordPolish = WordPolishInput,
-                                WordTranslated = WordTranslatedInput,
-                                CardStackId = applicationHelper.cardStacks.Id
-
-                            };
+                            Words word = SelectedItem;
                             using (var context = new DatabaseContext())
                             {
                                 var index = WordsList.IndexOf(SelectedItem);
@@ -202,7 +199,7 @@ namespace LearningApplication.ViewModels.Dictionary
             }
         }
 
-        private ICommand? closeWindow = null;
+        private ICommand closeWindow = null;
         public ICommand CloseWindow
         {
             get
