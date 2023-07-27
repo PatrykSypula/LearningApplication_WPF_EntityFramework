@@ -7,51 +7,63 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Views\ChooseDictionaryWindow.xaml.cs">
+    <Compile Update="Views\Session\ChooseDictionaryWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\DictionaryCreateWindow.xaml.cs">
+    <Compile Update="Views\Statistics\ChooseStatisticDictionaryWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\DictionaryEditWindow.xaml.cs">
+    <Compile Update="Views\Dictionary\DictionaryCreateWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\DictionaryManagementWindow.xaml.cs">
+    <Compile Update="Views\Dictionary\DictionaryEditWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\SessionInputNoReturnsWindow.xaml.cs">
+    <Compile Update="Views\Dictionary\DictionaryManagementWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\SessionInputWithReturnsWindow.xaml.cs">
+    <Compile Update="Views\Session\SessionInputNoReturnsWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\SessionYesNoWindow.xaml.cs">
+    <Compile Update="Views\Session\SessionInputWithReturnsWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Session\SessionYesNoWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\Statistics\StatisticsFromDictionaryWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Views\ChooseDictionaryWindow.xaml">
+    <Page Update="Views\Session\ChooseDictionaryWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\DictionaryCreateWindow.xaml">
+    <Page Update="Views\Statistics\ChooseStatisticDictionaryWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\DictionaryEditWindow.xaml">
+    <Page Update="Views\Dictionary\DictionaryCreateWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\DictionaryManagementWindow.xaml">
+    <Page Update="Views\Dictionary\DictionaryEditWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Dictionary\DictionaryManagementWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\SessionInputNoReturnsWindow.xaml">
+    <Page Update="Views\Session\SessionInputNoReturnsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\SessionInputWithReturnsWindow.xaml">
+    <Page Update="Views\Session\SessionInputWithReturnsWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\SessionYesNoWindow.xaml">
+    <Page Update="Views\Session\SessionYesNoWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Statistics\StatisticsFromDictionaryWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

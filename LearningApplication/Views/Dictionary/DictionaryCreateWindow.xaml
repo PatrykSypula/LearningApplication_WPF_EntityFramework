@@ -1,0 +1,32 @@
+﻿<Window x:Class="LearningApplication.Views.DictionaryCreateWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LearningApplication.Views"
+        xmlns:vm="clr-namespace:LearningApplication.ViewModels"
+        xmlns:app="clr-namespace:LearningApplication"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Title="Stwórz słownik" Height="400" Width="500">
+    <Grid>
+        <Button IsEnabled="False" VerticalAlignment="Top" Opacity="1" Content="Nazwa słownika" Background="White" HorizontalAlignment="Left" Margin="50,30,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="200" Height="40" FontSize="20" Foreground="Black"/>
+        <Button IsEnabled="False" VerticalAlignment="Top" Opacity="1" Grid.RowSpan="3" Height="135" Width="400" Background="White" HorizontalAlignment="Left" Margin="50,80,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" FontSize="30" Foreground="Black"/>
+        <TextBox FontWeight="Medium" app:SelectAllOnFocus.Enable="True" TextWrapping="Wrap" VerticalAlignment="Top"  Grid.RowSpan="3" Height="135" Text="{Binding DictionaryName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="380" Background="Transparent" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="60,80,0,0" BorderThickness="0" FontSize="30" Foreground="Black">
+            <TextBox.InputBindings>
+                <KeyBinding Command="{Binding CreateDictionary}"  Key="Enter" />
+            </TextBox.InputBindings>
+        </TextBox>
+        <Button Width="180" Height="60" Focusable="False" Margin="50,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding CreateDictionary}" IsDefault="True" Content="Dodaj"  materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" />
+        <Button Width="180" Height="60" Focusable="False" Margin="270,0,0,30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Grid.Row="4" Command="{Binding CloseWindow}" IsCancel="True" Content="Zamknij" materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="#FFFF5454" BorderBrush="#FFFF5454"/>
+    </Grid>
+</Window>

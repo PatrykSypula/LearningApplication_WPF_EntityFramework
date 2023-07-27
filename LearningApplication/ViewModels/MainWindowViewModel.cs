@@ -127,7 +127,9 @@ namespace LearningApplication.ViewModels
                 if (statisticsShow == null) statisticsShow = new RelayCommand(
                     (object o) =>
                     {
-
+                        var dictionary = ApplicationHelperSingleton.GetSingleton();
+                        dictionary.dictionaryAction = "Otwórz";
+                        new ChooseStatisticDictionaryWindow().ShowDialog();
                     });
                 return statisticsShow;
             }
@@ -141,7 +143,9 @@ namespace LearningApplication.ViewModels
                 if (statisticsDelete == null) statisticsDelete = new RelayCommand(
                     (object o) =>
                     {
-
+                        var dictionary = ApplicationHelperSingleton.GetSingleton();
+                        dictionary.dictionaryAction = "Usuń";
+                        new ChooseStatisticDictionaryWindow().ShowDialog();
                     });
                 return statisticsDelete;
             }

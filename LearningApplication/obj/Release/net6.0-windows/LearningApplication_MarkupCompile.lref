@@ -1,11 +1,13 @@
 ﻿
 FC:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\App.xaml;;
-FC:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\Views\ChooseDictionaryWindow.xaml;;
 FC:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\Views\MainWindow.xaml;;
-FC:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\Views\SessionYesNoWindow.xaml;;
-FC:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\Views\SessionInputWithReturnsWindow.xaml;;
-FC:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\Views\SessionInputNoReturnsWindow.xaml;;
-FC:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\Views\DictionaryManagementWindow.xaml;;
-FC:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\Views\DictionaryCreateWindow.xaml;;
-FC:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\Views\DictionaryEditWindow.xaml;;
+FC:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\Views\Dictionary\DictionaryCreateWindow.xaml;;
+FC:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\Views\Dictionary\DictionaryEditWindow.xaml;;
+FC:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\Views\Dictionary\DictionaryManagementWindow.xaml;;
+FC:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\Views\Statistics\ChooseStatisticDictionaryWindow.xaml;;
+FC:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\Views\Statistics\StatisticsFromDictionaryWindow.xaml;;
+FC:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\Views\Session\ChooseDictionaryWindow.xaml;;
+FC:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\Views\Session\SessionInputNoReturnsWindow.xaml;;
+FC:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\Views\Session\SessionInputWithReturnsWindow.xaml;;
+FC:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\Views\Session\SessionYesNoWindow.xaml;;
 
