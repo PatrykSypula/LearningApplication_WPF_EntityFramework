@@ -12,6 +12,7 @@ using System.Windows;
 using System.Windows.Media;
 using System.Reflection;
 using LearningApplication.Views.Statistics;
+using System.Collections;
 
 namespace LearningApplication.ViewModels.Statistics
 {

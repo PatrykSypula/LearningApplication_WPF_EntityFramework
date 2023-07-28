@@ -1,5 +1,6 @@
 ﻿using LearningApplication.Entities;
 using LearningApplication.Views;
+using LearningApplication.Views.Statistics;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System;
 using System.Collections.Generic;
@@ -237,6 +238,8 @@ namespace LearningApplication.ViewModels.Session
                     await context.SaveChangesAsync();
                 }
                 showExitPrompt = false;
+                applicationHelper.sessionStatistics = stats;
+                new StatisticsWindow().ShowDialog();
                 foreach (Window item in System.Windows.Application.Current.Windows)
                 {
                     if (item.DataContext == this) item.Close();

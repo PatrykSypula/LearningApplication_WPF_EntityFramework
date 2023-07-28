@@ -15,10 +15,20 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        Title="{Binding WindowName}" Height="600" Width="700">
+        Title="{Binding WindowName}" Height="630" Width="400">
     <Grid>
-        <TextBox IsEnabled="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="600" IsReadOnly="True" FontWeight="Medium" TextWrapping="Wrap" Grid.RowSpan="3" Text="{Binding WordTranslated}" Background="Transparent" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" BorderThickness="0" FontSize="30" Foreground="Black"/>
-        <Button IsEnabled="True"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Height="600" Opacity="0" Width="700" Command="{Binding ShowWord}" />
+        <Button IsEnabled="False" Opacity="1" Content="Data" Background="White" HorizontalAlignment="Left" Margin="30,10,0,0" VerticalAlignment="Top" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="150" Height="40" FontSize="20" Foreground="Black"/>
+        <Button IsEnabled="False" Content ="{Binding Data, StringFormat='HH:mm dd.MM.yyyy'}" VerticalAlignment="Top" Opacity="1" Background="White" HorizontalAlignment="Left" Margin="30,60,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="340" Height="60" FontSize="20" Foreground="Black"/>
 
+        <Button IsEnabled="False" Opacity="1" Content="Poprawne odpowiedzi" Background="White" HorizontalAlignment="Left" Margin="30,130,0,0" VerticalAlignment="Top" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="230" Height="40" FontSize="20" Foreground="Black"/>
+        <Button IsEnabled="False" Content ="{Binding GoodAnswers}" VerticalAlignment="Top" Opacity="1" Background="White" HorizontalAlignment="Left" Margin="30,180,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="340" Height="60" FontSize="20" Foreground="Black"/>
+
+        <Button IsEnabled="False" Opacity="1" Content="Błędne odpowiedzi" Background="White" HorizontalAlignment="Left" Margin="30,250,0,0" VerticalAlignment="Top" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="230" Height="40" FontSize="20" Foreground="Black"/>
+        <Button IsEnabled="False" Content ="{Binding AllAnswers}" VerticalAlignment="Top" Opacity="1" Background="White" HorizontalAlignment="Left" Margin="30,300,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="340" Height="60" FontSize="20" Foreground="Black"/>
+
+        <Button IsEnabled="False" Opacity="1" Content="Skuteczność" Background="White" HorizontalAlignment="Left" Margin="30,370,0,0" VerticalAlignment="Top" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="150" Height="40" FontSize="20" Foreground="Black"/>
+        <Button IsEnabled="False" Content ="{Binding Percentage}" VerticalAlignment="Top" Opacity="1" Background="White" HorizontalAlignment="Left" Margin="30,420,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="340" Height="60" FontSize="20" Foreground="Black"/>
+
+        <Button Width="340" Height="60" Margin="30,500,0,30" Focusable="False" VerticalAlignment="Top" HorizontalAlignment="Left" Command="{Binding CloseWindow}" Content="Zamknij" materialDesign:ButtonAssist.CornerRadius="10" FontSize="20" Foreground="{DynamicResource MaterialDesignBody}" Background="#FFFF5454" BorderBrush="#FFFF5454"/>
     </Grid>
 </Window>

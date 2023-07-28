@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows;
+using LearningApplication.Views.Statistics;
 
 namespace LearningApplication.ViewModels.Session
 {
@@ -211,6 +212,8 @@ namespace LearningApplication.ViewModels.Session
                     await context.SaveChangesAsync();
                 }
                 showExitPrompt = false;
+                applicationHelper.sessionStatistics = stats;
+                new StatisticsWindow().ShowDialog();
                 foreach (Window item in Application.Current.Windows)
                 {
                     if (item.DataContext == this) item.Close();
