@@ -28,7 +28,7 @@
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Poziom trudności" Width="3*" Binding="{Binding Difficulty}"/>
                 <DataGridTextColumn Header="Wynik" Width="2*" Binding="{Binding Percentage}"/>
-                <DataGridTextColumn Header="Data" Width="4*" Binding="{Binding SessionDate}"/>
+                <DataGridTextColumn Header="Data" Width="4*" Binding="{Binding SessionDate ,StringFormat='HH:mm dd.MM.yyyy'}"/>
             </DataGrid.Columns>
             <DataGrid.InputBindings>
                 <MouseBinding Gesture="LeftDoubleClick" Command="{Binding StatisticAction}"/>

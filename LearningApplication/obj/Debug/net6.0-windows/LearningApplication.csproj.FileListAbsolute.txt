@@ -141,3 +141,5 @@ C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\Session\SessionInputNoReturnsWindow.baml
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\Session\SessionInputWithReturnsWindow.baml
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\Session\SessionYesNoWindow.baml
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\Statistics\StatisticsWindow.g.cs
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\Statistics\StatisticsWindow.baml

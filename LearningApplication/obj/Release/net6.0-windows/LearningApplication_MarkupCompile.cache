@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\obj\Release\net6.0-windows\
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Release\net6.0-windows\
 LearningApplication
 none
 false
 TRACE;RELEASE;NET;NET6_0;NETCOREAPP
-C:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication\App.xaml
-10-1939186493
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\App.xaml
+11-643592562
 
-36-621247444
+39-536130183
 225-406134218
-Views\Dictionary\DictionaryCreateWindow.xaml;Views\Dictionary\DictionaryEditWindow.xaml;Views\Dictionary\DictionaryManagementWindow.xaml;Views\MainWindow.xaml;Views\Session\ChooseDictionaryWindow.xaml;Views\Session\SessionInputNoReturnsWindow.xaml;Views\Session\SessionInputWithReturnsWindow.xaml;Views\Session\SessionYesNoWindow.xaml;Views\Statistics\ChooseStatisticDictionaryWindow.xaml;Views\Statistics\StatisticsFromDictionaryWindow.xaml;
+Views\Dictionary\DictionaryCreateWindow.xaml;Views\Dictionary\DictionaryEditWindow.xaml;Views\Dictionary\DictionaryManagementWindow.xaml;Views\MainWindow.xaml;Views\Session\ChooseDictionaryWindow.xaml;Views\Session\SessionInputNoReturnsWindow.xaml;Views\Session\SessionInputWithReturnsWindow.xaml;Views\Session\SessionYesNoWindow.xaml;Views\Statistics\ChooseStatisticDictionaryWindow.xaml;Views\Statistics\StatisticsFromDictionaryWindow.xaml;Views\Statistics\StatisticsWindow.xaml;
 
 True
 

@@ -224,7 +224,7 @@ namespace LearningApplication.ViewModels.Session
             {
                 SessionStatistics stats = new SessionStatistics()
                 {
-                    SessionDate = DateTime.Parse(DateTime.Now.ToString("dd/MM/yyyy HH:mm")),
+                    SessionDate = DateTime.Now,
                     Difficulty = applicationHelper.sessionDifficulty,
                     GoodAnswers = NumberCorrectAnswers,
                     AllAnswers = NumberAllAnswers,

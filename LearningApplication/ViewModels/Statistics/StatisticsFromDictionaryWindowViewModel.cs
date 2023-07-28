@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows;
 using System.Windows.Media;
 using System.Reflection;
+using LearningApplication.Views.Statistics;
 
 namespace LearningApplication.ViewModels.Statistics
 {
@@ -34,7 +35,7 @@ namespace LearningApplication.ViewModels.Statistics
                 ButtonColor = "#FF0000";
                 ButtonText = "Usuń";
             }
-            
+
         }
 
         public List<SessionStatistics> StatisticList
@@ -134,7 +135,7 @@ namespace LearningApplication.ViewModels.Statistics
                          if (applicationHelperSingleton.dictionaryAction == "Otwórz")
                          {
                              applicationHelperSingleton.sessionStatistics = SelectedItem;
-                             //Otwieranie okna
+                             new StatisticsWindow().ShowDialog();
 
                          }
                          else
