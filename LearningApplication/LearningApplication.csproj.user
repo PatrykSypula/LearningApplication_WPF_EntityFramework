@@ -7,6 +7,12 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Views\CustomMessageBoxOk.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Views\CustomMessageBoxYesNo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="Views\Session\ChooseDictionaryWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -39,6 +45,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="Views\CustomMessageBoxOk.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\CustomMessageBoxYesNo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Session\ChooseDictionaryWindow.xaml">
       <SubType>Designer</SubType>
     </Page>

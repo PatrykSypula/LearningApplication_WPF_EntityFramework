@@ -1,4 +1,5 @@
-﻿using LearningApplication.Entities;
+﻿
+using LearningApplication.Entities;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows.Input;
