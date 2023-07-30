@@ -49,7 +49,7 @@ namespace LearningApplication.ViewModels.Dictionary
             }
             set
             {
-                dictionaryName = value.Trim();
+                dictionaryName = value;
                 OnPropertyChanged(nameof(DictionaryName));
             }
         }
@@ -83,7 +83,7 @@ namespace LearningApplication.ViewModels.Dictionary
                 if (createDictionary == null) createDictionary = new RelayCommand(
                      (o) =>
                      {
-                         if (DictionaryName != null && DictionaryName != "")
+                         if (DictionaryName != null && DictionaryName.Trim() != "")
                          {
                              var canCreateDictionary = true;
                              foreach (var dictionary in CardStackList)
@@ -97,15 +97,25 @@ namespace LearningApplication.ViewModels.Dictionary
                              }
                              if (canCreateDictionary)
                              {
-                                 var dictionary = new CardStacks() { CardStackName = DictionaryName, IsDefaultCardStack = 0 };
-                                 using (var context = new DatabaseContext())
+                                 ApplicationHelperSingleton connection = ApplicationHelperSingleton.GetSingleton();
+                                 try
                                  {
-                                     context.CardStacks.Add(dictionary);
-                                     context.SaveChanges();
-                                     SelectedItem = dictionary;
-                                     var dictionaryhelper = ApplicationHelperSingleton.GetSingleton();
-                                     dictionaryhelper.cardStacks = SelectedItem;
+                                     var dictionary = new CardStacks() { CardStackName = DictionaryName.Trim(), IsDefaultCardStack = 0 };
+                                     using (var context = new DatabaseContext())
+                                     {
+                                         context.CardStacks.Add(dictionary);
+                                         context.SaveChanges();
+                                         SelectedItem = dictionary;
+                                         var dictionaryhelper = ApplicationHelperSingleton.GetSingleton();
+                                         dictionaryhelper.cardStacks = SelectedItem;
+                                     }
                                  }
+                                 catch
+                                 {
+                                     MessageBox.Show("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później");
+                                     connection.isConnected = false;
+                                 }
+                                 connection.isConnected = true;
                                  foreach (Window item in System.Windows.Application.Current.Windows)
                                  {
                                      if (item.DataContext == this) item.Close();

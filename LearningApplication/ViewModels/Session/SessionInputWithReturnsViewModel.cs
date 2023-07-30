@@ -265,14 +265,25 @@ namespace LearningApplication.ViewModels.Session
                     Percentage = NumberPercent,
                     CardStackId = applicationHelper.cardStacks.Id
                 };
-                using (var context = new DatabaseContext())
+                ApplicationHelperSingleton connection = ApplicationHelperSingleton.GetSingleton();
+                try
                 {
-                    await context.SessionStatistics.AddAsync(stats);
-                    await context.SaveChangesAsync();
+                    using (var context = new DatabaseContext())
+                    {
+                        await context.SessionStatistics.AddAsync(stats);
+                        await context.SaveChangesAsync();
+                    }
+                    showExitPrompt = false;
+                    applicationHelper.sessionStatistics = stats;
+                    new StatisticsWindow().ShowDialog();
                 }
-                showExitPrompt = false;
-                applicationHelper.sessionStatistics = stats;
-                new StatisticsWindow().ShowDialog();
+                catch
+                {
+                    MessageBox.Show("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później");
+                    connection.isConnected = false;
+                }
+                connection.isConnected = true;
+
                 foreach (Window item in Application.Current.Windows)
                 {
                     if (item.DataContext == this) item.Close();
@@ -288,6 +299,8 @@ namespace LearningApplication.ViewModels.Session
             WordPolish = word?.WordPolish;
             WordTranslated = "";
         }
+
+
 
         #endregion
     }

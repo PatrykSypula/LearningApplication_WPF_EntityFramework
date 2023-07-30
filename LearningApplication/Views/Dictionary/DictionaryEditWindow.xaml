@@ -21,14 +21,14 @@
     <Grid>
         <Button IsEnabled="False" VerticalAlignment="Top" Opacity="1" Content="Słowo po polsku" Background="White" HorizontalAlignment="Left" Margin="50,30,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="180" Height="40" FontSize="20" Foreground="Black"/>
         <Button IsEnabled="False" VerticalAlignment="Top" Opacity="1" Grid.RowSpan="3" Height="135" Width="400" Background="White" HorizontalAlignment="Left" Margin="50,80,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" FontSize="30" Foreground="Black"/>
-        <TextBox FontWeight="Medium" app:SelectAllOnFocus.Enable="True" TextWrapping="Wrap" VerticalAlignment="Top" Grid.RowSpan="3" Height="135" Text="{Binding WordPolishInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="380" Background="Transparent" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="60,80,0,0" BorderThickness="0" FontSize="30" Foreground="Black">
+        <TextBox FontWeight="Medium" MaxLength="50" app:SelectAllOnFocus.Enable="True" TextWrapping="Wrap" VerticalAlignment="Top" Grid.RowSpan="3" Height="135" Text="{Binding WordPolishInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="380" Background="Transparent" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="60,80,0,0" BorderThickness="0" FontSize="30" Foreground="Black">
             <TextBox.InputBindings>
                 <KeyBinding Command="{Binding WordAdd}"  Key="Enter" />
             </TextBox.InputBindings>
         </TextBox>
         <Button IsEnabled="False" VerticalAlignment="Top" Opacity="1" Content="Tłumaczenie" Background="White" HorizontalAlignment="Left" Margin="50,225,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" Width="180" Height="40" FontSize="20" Foreground="Black"/>
         <Button IsEnabled="False" VerticalAlignment="Top" Opacity="1" Grid.RowSpan="3" Height="135" Width="400" Background="White" HorizontalAlignment="Left" Margin="50,275,0,0" BorderThickness="2" materialDesign:ButtonAssist.CornerRadius="10" FontSize="30" Foreground="Black"/>
-        <TextBox FontWeight="Medium" app:SelectAllOnFocus.Enable="True" TextWrapping="Wrap" VerticalAlignment="Top"  Grid.RowSpan="3" Height="135" Text="{Binding WordTranslatedInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="380" Background="Transparent" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="60,275,0,0" BorderThickness="0" FontSize="30" Foreground="Black">
+        <TextBox FontWeight="Medium" MaxLength="50" app:SelectAllOnFocus.Enable="True" TextWrapping="Wrap" VerticalAlignment="Top"  Grid.RowSpan="3" Height="135" Text="{Binding WordTranslatedInput, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Width="380" Background="Transparent" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="60,275,0,0" BorderThickness="0" FontSize="30" Foreground="Black">
             <TextBox.InputBindings>
                 <KeyBinding Command="{Binding WordAdd}"  Key="Enter" />
             </TextBox.InputBindings>

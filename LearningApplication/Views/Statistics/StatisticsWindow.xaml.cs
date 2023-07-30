@@ -23,6 +23,15 @@ namespace LearningApplication.Views.Statistics
         {
             InitializeComponent();
             this.DataContext = new ViewModels.Statistics.StatisticsViewModel();
+            CloseDueToLackofConnection();
+        }
+        public void CloseDueToLackofConnection()
+        {
+            var applicationHelper = ApplicationHelperSingleton.GetSingleton();
+            if (!applicationHelper.isConnected)
+            {
+                this.Close();
+            }
         }
     }
 }

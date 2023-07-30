@@ -206,6 +206,9 @@ namespace LearningApplication.ViewModels.Session
                     Percentage = NumberPercent,
                     CardStackId = applicationHelper.cardStacks.Id
                 };
+                ApplicationHelperSingleton connection = ApplicationHelperSingleton.GetSingleton();
+                try
+                {
                 using (var context = new DatabaseContext())
                 {
                     await context.SessionStatistics.AddAsync(stats);
@@ -214,6 +217,14 @@ namespace LearningApplication.ViewModels.Session
                 showExitPrompt = false;
                 applicationHelper.sessionStatistics = stats;
                 new StatisticsWindow().ShowDialog();
+                }
+                catch
+                {
+                    MessageBox.Show("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później");
+                    connection.isConnected = false;
+                }
+                connection.isConnected = true;
+
                 foreach (Window item in Application.Current.Windows)
                 {
                     if (item.DataContext == this) item.Close();

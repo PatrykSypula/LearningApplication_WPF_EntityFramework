@@ -146,29 +146,39 @@ namespace LearningApplication.ViewModels.Dictionary
                                  var result = MessageBox.Show("Słownik \"" + SelectedItem.CardStackName + "\" zostanie usunięty wraz z jego słowami oraz statystykami! Czy na pewno chcesz kontynuować?", "Usunięcie słownika", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                                  if (result == MessageBoxResult.Yes)
                                  {
-                                     List<Words> wordsList;
-                                     List<SessionStatistics> statsList;
-
-                                     using (var context = new DatabaseContext())
+                                     ApplicationHelperSingleton connection = ApplicationHelperSingleton.GetSingleton();
+                                     try
                                      {
-                                         wordsList = context.Words.Where(w => w.CardStackId == dictionary.cardStacks.Id).ToList();
-                                         foreach (var word in wordsList)
+                                         List<Words> wordsList;
+                                         List<SessionStatistics> statsList;
+
+                                         using (var context = new DatabaseContext())
                                          {
-                                             context.Words.Remove(word);
+                                             wordsList = context.Words.Where(w => w.CardStackId == dictionary.cardStacks.Id).ToList();
+                                             foreach (var word in wordsList)
+                                             {
+                                                 context.Words.Remove(word);
+                                             }
+                                             statsList = context.SessionStatistics.Where(s => s.CardStackId == dictionary.cardStacks.Id).ToList();
+                                             foreach (var stat in statsList)
+                                             {
+                                                 context.SessionStatistics.Remove(stat);
+                                             }
+                                             context.CardStacks.Remove(dictionary.cardStacks);
+                                             context.SaveChanges();
+                                             foreach (Window item in Application.Current.Windows)
+                                             {
+                                                 if (item.DataContext == this) item.Close();
+                                             }
+                                             MessageBox.Show("Pomyślnie usunięto słownik.");
                                          }
-                                         statsList = context.SessionStatistics.Where(s => s.CardStackId == dictionary.cardStacks.Id).ToList();
-                                         foreach (var stat in statsList)
-                                         {
-                                             context.SessionStatistics.Remove(stat);
-                                         }
-                                         context.CardStacks.Remove(dictionary.cardStacks);
-                                         context.SaveChanges();
-                                         foreach (Window item in Application.Current.Windows)
-                                         {
-                                             if (item.DataContext == this) item.Close();
-                                         }
-                                         MessageBox.Show("Pomyślnie usunięto słownik.");
                                      }
+                                     catch
+                                     {
+                                         MessageBox.Show("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później");
+                                         connection.isConnected = false;
+                                     }
+                                     connection.isConnected = true;
                                  }
                              }
                          }

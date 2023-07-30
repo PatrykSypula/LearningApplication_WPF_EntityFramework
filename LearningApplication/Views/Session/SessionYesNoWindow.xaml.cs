@@ -25,6 +25,7 @@ namespace LearningApplication.Views
         {
             InitializeComponent();
             this.DataContext = new ViewModels.Session.SessionYesNoViewModel();
+            CloseDueToLackofConnection();
         }
         protected override void OnClosing(CancelEventArgs e)
         {
@@ -36,7 +37,15 @@ namespace LearningApplication.Views
                     e.Cancel = true;
                 }
             }
-            
         }
+        public void CloseDueToLackofConnection()
+        {
+            var applicationHelper = ApplicationHelperSingleton.GetSingleton();
+            if (!applicationHelper.isConnected)
+            {
+                this.Close();
+            }
+        }
+
     }
 }

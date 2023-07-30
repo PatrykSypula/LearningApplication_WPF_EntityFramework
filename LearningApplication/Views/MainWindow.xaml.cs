@@ -24,6 +24,15 @@ namespace LearningApplication
         {
             InitializeComponent();
             this.DataContext = new ViewModels.MainWindowViewModel();
+            CloseDueToLackofConnection();
+        }
+        public void CloseDueToLackofConnection()
+        {
+            var applicationHelper = ApplicationHelperSingleton.GetSingleton();
+            if (!applicationHelper.isConnected)
+            {
+                this.Close();
+            }
         }
     }
 }

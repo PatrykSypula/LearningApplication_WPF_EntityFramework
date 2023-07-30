@@ -26,6 +26,8 @@ namespace LearningApplication
         }
         private ApplicationHelperSingleton() { }
 
+        public bool isConnected = true;
+
         public CardStacks cardStacks { get; set; }
         public SessionStatistics sessionStatistics { get; set; }
         public string sessionDifficulty { get; set; }

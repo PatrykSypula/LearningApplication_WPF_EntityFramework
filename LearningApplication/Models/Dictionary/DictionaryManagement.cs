@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace LearningApplication.Models.Dictionary
 {
@@ -15,7 +16,17 @@ namespace LearningApplication.Models.Dictionary
 
         public DictionaryManagement()
         {
-            GetDataFromDb();
+            ApplicationHelperSingleton connection = ApplicationHelperSingleton.GetSingleton();
+            try
+            {
+                GetDataFromDb();
+            }
+            catch
+            {
+                MessageBox.Show("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później");
+                connection.isConnected = false;
+            }
+            connection.isConnected = true;
         }
         private void GetDataFromDb()
         {

@@ -52,7 +52,7 @@ namespace LearningApplication.ViewModels.Dictionary
             }
             set
             {
-                editDictionary.wordPolish = value.Trim();
+                editDictionary.wordPolish = value;
                 OnPropertyChanged(nameof(WordPolishInput));
             }
         }
@@ -65,7 +65,7 @@ namespace LearningApplication.ViewModels.Dictionary
             }
             set
             {
-                editDictionary.wordTranslated = value.Trim();
+                editDictionary.wordTranslated = value;
                 OnPropertyChanged(nameof(WordTranslatedInput));
             }
         }
@@ -100,22 +100,32 @@ namespace LearningApplication.ViewModels.Dictionary
                 if (wordAdd == null) wordAdd = new RelayCommand(
                     (o) =>
                     {
-                    if (WordPolishInput != "" && WordTranslatedInput != "" && WordPolishInput != null && WordTranslatedInput != null)
+                        if (WordPolishInput.Trim() != "" && WordTranslatedInput.Trim() != "" && WordPolishInput != null && WordTranslatedInput != null)
                         {
-                            Words word = new Words()
+                            ApplicationHelperSingleton connection = ApplicationHelperSingleton.GetSingleton();
+                            try
                             {
-                                WordPolish = WordPolishInput,
-                                WordTranslated = WordTranslatedInput,
-                                CardStackId = applicationHelper.cardStacks.Id
-                            };
-                            using (var context = new DatabaseContext())
-                            {
-                                context.Words.Add(word);
-                                context.SaveChanges();
-                                WordsList.Add(word);
+                                Words word = new Words()
+                                {
+                                    WordPolish = WordPolishInput.Trim(),
+                                    WordTranslated = WordTranslatedInput.Trim(),
+                                    CardStackId = applicationHelper.cardStacks.Id
+                                };
+                                using (var context = new DatabaseContext())
+                                {
+                                    context.Words.Add(word);
+                                    context.SaveChanges();
+                                    WordsList.Add(word);
+                                }
+                                WordPolishInput = "";
+                                WordTranslatedInput = "";
                             }
-                            WordPolishInput = "";
-                            WordTranslatedInput = "";
+                            catch
+                            {
+                                MessageBox.Show("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później");
+                                connection.isConnected = false;
+                            }
+                            connection.isConnected = true;
 
                         }
                         else
@@ -139,8 +149,8 @@ namespace LearningApplication.ViewModels.Dictionary
                         Words word = new Words()
                         {
                             Id = SelectedItem.Id,
-                            WordPolish = WordPolishInput,
-                            WordTranslated = WordTranslatedInput,
+                            WordPolish = WordPolishInput.Trim(),
+                            WordTranslated = WordTranslatedInput.Trim(),
                             CardStackId = applicationHelper.cardStacks.Id
 
                         };

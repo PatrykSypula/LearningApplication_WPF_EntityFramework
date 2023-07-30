@@ -23,6 +23,15 @@ namespace LearningApplication.Views
         {
             InitializeComponent();
             this.DataContext = new ViewModels.Dictionary.DictionaryEditViewModel();
+            CloseDueToLackofConnection();
+        }
+        public void CloseDueToLackofConnection()
+        {
+            var applicationHelper = ApplicationHelperSingleton.GetSingleton();
+            if (!applicationHelper.isConnected)
+            {
+                this.Close();
+            }
         }
     }
 }

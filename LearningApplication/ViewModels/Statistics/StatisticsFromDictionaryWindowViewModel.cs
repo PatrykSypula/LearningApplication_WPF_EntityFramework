@@ -144,13 +144,23 @@ namespace LearningApplication.ViewModels.Statistics
                              var result = MessageBox.Show("Czy na pewno chcesz usunąć zaznaczoną statystykę? Dokonane zmiany nie mogą zostać cofnięte!", "Usunięcie statystyki", MessageBoxButton.YesNo, MessageBoxImage.Warning);
                              if (result == MessageBoxResult.Yes)
                              {
-                                 SessionStatistics stat = SelectedItem;
-                                 using (var context = new DatabaseContext())
+                                 ApplicationHelperSingleton connection = ApplicationHelperSingleton.GetSingleton();
+                                 try
                                  {
-                                     context.SessionStatistics.Remove(stat);
-                                     context.SaveChanges();
+                                     SessionStatistics stat = SelectedItem;
+                                     using (var context = new DatabaseContext())
+                                     {
+                                         context.SessionStatistics.Remove(stat);
+                                         context.SaveChanges();
+                                     }
+                                     MessageBox.Show("Pomyślnie usunięto statystykę");
                                  }
-                                 MessageBox.Show("Pomyślnie usunięto statystykę");
+                                 catch
+                                 {
+                                     MessageBox.Show("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później");
+                                     connection.isConnected = false;
+                                 }
+                                 connection.isConnected = true;
                                  foreach (Window item in Application.Current.Windows)
                                  {
                                      if (item.DataContext == this) item.Close();

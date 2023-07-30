@@ -9,19 +9,30 @@ using System.Windows.Input;
 using LearningApplication.Views;
 using Microsoft.EntityFrameworkCore;
 using MaterialDesignThemes.Wpf;
+using System.Windows;
 
 namespace LearningApplication.ViewModels
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
-        public MainWindowViewModel() 
+        public MainWindowViewModel()
         {
-            using (var context = new DatabaseContext())
+            ApplicationHelperSingleton connection = ApplicationHelperSingleton.GetSingleton();
+            try
             {
-                //Statement return nothing.
-                //It is used to execute first query that takes more time so there will not be any long loading windows.
-                context.CardStacks.Where(c => c.Id == 0).AsNoTracking().ToList();
+                using (var context = new DatabaseContext())
+                {
+                    //Statement return nothing.
+                    //It is used to execute first query that takes more time so there will not be any long loading windows.
+                    context.CardStacks.Where(c => c.Id == 0).AsNoTracking().ToList();
+                }
             }
+            catch
+            {
+                MessageBox.Show("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później");
+                connection.isConnected = false;
+            }
+            connection.isConnected = true;
         }
         #region Commands
 
