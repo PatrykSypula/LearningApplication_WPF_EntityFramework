@@ -16,5 +16,5 @@ C:\Users\patry\source\repos\PatrykSypula\LearningApplication\LearningApplication
 225-406134218
 Views\CustomMessageBoxOk.xaml;Views\CustomMessageBoxYesNo.xaml;Views\Dictionary\DictionaryCreateWindow.xaml;Views\Dictionary\DictionaryEditWindow.xaml;Views\Dictionary\DictionaryManagementWindow.xaml;Views\MainWindow.xaml;Views\Session\ChooseDictionaryWindow.xaml;Views\Session\SessionInputNoReturnsWindow.xaml;Views\Session\SessionInputWithReturnsWindow.xaml;Views\Session\SessionYesNoWindow.xaml;Views\Statistics\ChooseStatisticDictionaryWindow.xaml;Views\Statistics\StatisticsFromDictionaryWindow.xaml;Views\Statistics\StatisticsWindow.xaml;
 
-True
+False
 

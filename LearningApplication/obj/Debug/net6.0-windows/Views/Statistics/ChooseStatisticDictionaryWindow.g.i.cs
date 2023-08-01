@@ -65,8 +65,8 @@ namespace LearningApplication.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/LearningApplication;V1.0.0.0;component/views/statistics/choosestatisticdictionar" +
-                    "ywindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/LearningApplication;component/views/statistics/choosestatisticdictionarywindow.x" +
+                    "aml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Statistics\ChooseStatisticDictionaryWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

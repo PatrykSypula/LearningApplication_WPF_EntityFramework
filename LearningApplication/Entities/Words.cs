@@ -12,7 +12,7 @@ namespace LearningApplication.Entities
         public int Id { get; set; }
         [Column(TypeName = "varchar")]
         public string WordPolish { get; set; }
-        [Column(TypeName = "varchar")]
+        [Column(TypeName = "nvarchar")]
         public string WordTranslated { get; set; }
         public int CardStackId { get; set; }
         public CardStacks CardStack { get; set; }

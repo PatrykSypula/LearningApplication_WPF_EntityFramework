@@ -57,7 +57,7 @@ namespace LearningApplication.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/LearningApplication;V1.0.0.0;component/views/session/sessionyesnowindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/LearningApplication;component/views/session/sessionyesnowindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Session\SessionYesNoWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

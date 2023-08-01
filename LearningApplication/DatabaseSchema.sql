@@ -12,7 +12,7 @@ CREATE TABLE CardStacks (
 CREATE TABLE Words (
     Id INTEGER IDENTITY(1,1) PRIMARY KEY,
     WordPolish VARCHAR(50) NOT NULL,
-    WordTranslated VARCHAR(50) NOT NULL,
+    WordTranslated NVARCHAR(50) NOT NULL,
     CardStackId INTEGER NOT NULL,
     FOREIGN KEY (CardStackId) REFERENCES CardStacks(Id));
 
