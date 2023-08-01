@@ -31,8 +31,8 @@ namespace LearningApplication.Views
         {
             if (SessionInputWithReturnsViewModel.showExitPrompt)
             {
-                var result = MessageBox.Show("Czy na pewno chcesz zakończyć sesję?", "Wyjście z sesji", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if (result == MessageBoxResult.No)
+                var result = new Views.CustomMessageBoxYesNo("Czy na pewno chcesz zakończyć sesję?").ShowDialog();
+                if (!(bool)result)
                 {
                     e.Cancel = true;
                 }
@@ -46,6 +46,10 @@ namespace LearningApplication.Views
             {
                 this.Close();
             }
+        }
+        protected override void OnSourceInitialized(EventArgs e)
+        {
+            IconHelper.RemoveIcon(this);
         }
     }
 }

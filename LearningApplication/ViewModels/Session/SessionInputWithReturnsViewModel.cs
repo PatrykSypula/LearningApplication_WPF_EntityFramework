@@ -33,8 +33,22 @@ namespace LearningApplication.ViewModels.Session
             AnswerBackground = Brushes.White;
             ButtonText = "Sprawdź";
             AfterClick();
+            DisableInput = false;
         }
 
+        private bool disableInput;
+        public bool DisableInput
+        {
+            get
+            {
+                return disableInput;
+            }
+            set
+            {
+                disableInput = value;
+                OnPropertyChanged(nameof(DisableInput));
+            }
+        }
 
         private string windowName;
         public string WindowName
@@ -196,6 +210,7 @@ namespace LearningApplication.ViewModels.Session
                         //Button text check
                         if (ButtonText == "Sprawdź")
                         {
+                            DisableInput = true;
                             //Correct answer
                             if (WordTranslated.ToLower().Trim() == WordsList[session.indexRandom].WordTranslated)
                             {
@@ -216,6 +231,7 @@ namespace LearningApplication.ViewModels.Session
                         //Button text next
                         else
                         {
+                            DisableInput = false;
                             ButtonText = "Sprawdź";
                             AnswerBackground = Brushes.White;
                             if (isCorrect)

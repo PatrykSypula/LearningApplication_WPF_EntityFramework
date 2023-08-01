@@ -20,7 +20,6 @@ namespace LearningApplication.ViewModels.Dictionary
             WindowName = "Edycja słownika: " + applicationHelper.cardStacks.CardStackName;
         }
 
-
         private string windowName;
         public string WindowName
         {

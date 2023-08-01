@@ -18,7 +18,7 @@ namespace LearningApplication.ViewModels.Statistics
         public StatisticsViewModel()
         {
             StringBuilder sb = new StringBuilder();
-            windowName = "Statystyki ze słownika: " + applicationHelperSingleton.cardStacks.CardStackName +" z poziomu:" + applicationHelperSingleton.sessionStatistics.Difficulty;
+            windowName = "Statystyki ze słownika: " + applicationHelperSingleton.cardStacks.CardStackName +" z poziomu: " + applicationHelperSingleton.sessionStatistics.Difficulty;
             DataFormat = "";
             GoodAnswers = applicationHelperSingleton.sessionStatistics.GoodAnswers;
             AllAnswers = applicationHelperSingleton.sessionStatistics.AllAnswers;

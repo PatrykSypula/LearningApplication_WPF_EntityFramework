@@ -33,5 +33,9 @@ namespace LearningApplication.Views.Statistics
                 this.Close();
             }
         }
+        protected override void OnSourceInitialized(EventArgs e)
+        {
+            IconHelper.RemoveIcon(this);
+        }
     }
 }
