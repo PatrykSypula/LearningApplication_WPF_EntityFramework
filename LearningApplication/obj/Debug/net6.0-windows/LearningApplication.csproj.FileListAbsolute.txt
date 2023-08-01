@@ -147,3 +147,4 @@ C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\CustomMessageBoxOk.baml
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\CustomMessageBoxYesNo.g.cs
 C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\Views\CustomMessageBoxYesNo.baml
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\obj\Debug\net6.0-windows\LearningApplication_Content.g.cs
