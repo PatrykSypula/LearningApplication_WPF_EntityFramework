@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\patry\\Source\\Repos\\PatrykSypula\\LearningApplication\\LearningApplication\\LearningApplication.csproj": {}
+    "C:\\Users\\patry\\Source\\Repos\\PatrykSypula\\LearningApplication_WPF_EntityFramework\\LearningApplication\\LearningApplication.csproj": {}
   },
   "projects": {
-    "C:\\Users\\patry\\Source\\Repos\\PatrykSypula\\LearningApplication\\LearningApplication\\LearningApplication.csproj": {
+    "C:\\Users\\patry\\Source\\Repos\\PatrykSypula\\LearningApplication_WPF_EntityFramework\\LearningApplication\\LearningApplication.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\patry\\Source\\Repos\\PatrykSypula\\LearningApplication\\LearningApplication\\LearningApplication.csproj",
+        "projectUniqueName": "C:\\Users\\patry\\Source\\Repos\\PatrykSypula\\LearningApplication_WPF_EntityFramework\\LearningApplication\\LearningApplication.csproj",
         "projectName": "LearningApplication",
-        "projectPath": "C:\\Users\\patry\\Source\\Repos\\PatrykSypula\\LearningApplication\\LearningApplication\\LearningApplication.csproj",
+        "projectPath": "C:\\Users\\patry\\Source\\Repos\\PatrykSypula\\LearningApplication_WPF_EntityFramework\\LearningApplication\\LearningApplication.csproj",
         "packagesPath": "C:\\Users\\patry\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\patry\\Source\\Repos\\PatrykSypula\\LearningApplication\\LearningApplication\\obj\\",
+        "outputPath": "C:\\Users\\patry\\Source\\Repos\\PatrykSypula\\LearningApplication_WPF_EntityFramework\\LearningApplication\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

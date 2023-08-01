@@ -8,4 +8,4 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = LearningApplication
-build_property.ProjectDir = C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication\LearningApplication\
+build_property.ProjectDir = C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication_WPF_EntityFramework\LearningApplication\
