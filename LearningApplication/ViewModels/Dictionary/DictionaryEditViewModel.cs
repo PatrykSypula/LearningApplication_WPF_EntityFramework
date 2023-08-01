@@ -123,7 +123,7 @@ namespace LearningApplication.ViewModels.Dictionary
                             }
                             catch
                             {
-                                MessageBox.Show("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później");
+                                new Views.CustomMessageBoxOk("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później").ShowDialog();
                                 connection.isConnected = false;
                             }
                             connection.isConnected = true;
@@ -131,7 +131,7 @@ namespace LearningApplication.ViewModels.Dictionary
                         }
                         else
                         {
-                            MessageBox.Show("Wprowadź poprawne słowo");
+                            new Views.CustomMessageBoxOk("Wprowadź poprawne słowo").ShowDialog();
                         }
 
                     });
@@ -184,8 +184,8 @@ namespace LearningApplication.ViewModels.Dictionary
                 if (wordDelete == null) wordDelete = new RelayCommand(
                     (o) =>
                     {
-                        var result = MessageBox.Show("Czy na pewno chcesz usunąć słowo " + SelectedItem.WordPolish + " - " + SelectedItem.WordTranslated + "? Dokonane zmiany nie mogą zostać cofnięte!", "Usunięcie słowa", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-                        if (result == MessageBoxResult.Yes)
+                        var result = new Views.CustomMessageBoxYesNo("Czy na pewno chcesz usunąć słowo " + SelectedItem.WordPolish + " - " + SelectedItem.WordTranslated + "? Dokonane zmiany nie mogą zostać cofnięte!").ShowDialog();
+                        if ((bool)result)
                         {
                             Words word = SelectedItem;
                             using (var context = new DatabaseContext())
@@ -218,9 +218,23 @@ namespace LearningApplication.ViewModels.Dictionary
                 if (closeWindow == null) closeWindow = new RelayCommand(
                      (o) =>
                      {
-                         foreach (Window item in Application.Current.Windows)
+                         if (WordsList.Count == 0)
                          {
-                             if (item.DataContext == this) item.Close();
+                             var result = new Views.CustomMessageBoxYesNo("Czy na pewno chcesz wyjść nie dodając żadnego słownicwa? Pusty słownik nie będzie wyświetlany podczas wyboru fiszek do nauki!").ShowDialog();
+                             if ((bool)result)
+                             {
+                                 foreach (Window item in Application.Current.Windows)
+                                 {
+                                     if (item.DataContext == this) item.Close();
+                                 }
+                             }
+                         }
+                         else
+                         {
+                             foreach (Window item in Application.Current.Windows)
+                             {
+                                 if (item.DataContext == this) item.Close();
+                             }
                          }
                      });
                 return closeWindow;

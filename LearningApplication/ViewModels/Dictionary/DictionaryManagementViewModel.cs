@@ -143,8 +143,8 @@ namespace LearningApplication.ViewModels.Dictionary
                              }
                              else
                              {
-                                 var result = MessageBox.Show("Słownik \"" + SelectedItem.CardStackName + "\" zostanie usunięty wraz z jego słowami oraz statystykami! Czy na pewno chcesz kontynuować?", "Usunięcie słownika", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-                                 if (result == MessageBoxResult.Yes)
+                                 var result = new Views.CustomMessageBoxYesNo("Słownik \"" + SelectedItem.CardStackName + "\" zostanie usunięty wraz z jego słowami oraz statystykami! Czy na pewno chcesz kontynuować?").ShowDialog();
+                                 if ((bool)result)
                                  {
                                      ApplicationHelperSingleton connection = ApplicationHelperSingleton.GetSingleton();
                                      try

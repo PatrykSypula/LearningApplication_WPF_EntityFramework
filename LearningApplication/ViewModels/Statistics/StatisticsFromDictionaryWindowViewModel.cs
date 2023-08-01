@@ -141,8 +141,8 @@ namespace LearningApplication.ViewModels.Statistics
                          }
                          else
                          {
-                             var result = MessageBox.Show("Czy na pewno chcesz usunąć zaznaczoną statystykę? Dokonane zmiany nie mogą zostać cofnięte!", "Usunięcie statystyki", MessageBoxButton.YesNo, MessageBoxImage.Warning);
-                             if (result == MessageBoxResult.Yes)
+                             var result = new Views.CustomMessageBoxYesNo("Czy na pewno chcesz usunąć zaznaczoną statystykę? Dokonane zmiany nie mogą zostać cofnięte!").ShowDialog();
+                             if ((bool)result)
                              {
                                  ApplicationHelperSingleton connection = ApplicationHelperSingleton.GetSingleton();
                                  try
@@ -153,11 +153,11 @@ namespace LearningApplication.ViewModels.Statistics
                                          context.SessionStatistics.Remove(stat);
                                          context.SaveChanges();
                                      }
-                                     MessageBox.Show("Pomyślnie usunięto statystykę");
+                                     new Views.CustomMessageBoxOk("Pomyślnie usunięto statystykę").ShowDialog();
                                  }
                                  catch
                                  {
-                                     MessageBox.Show("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później");
+                                     new Views.CustomMessageBoxOk("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później").ShowDialog();
                                      connection.isConnected = false;
                                  }
                                  connection.isConnected = true;

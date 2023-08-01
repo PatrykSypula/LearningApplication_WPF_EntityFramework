@@ -92,7 +92,7 @@ namespace LearningApplication.ViewModels.Session
                                  new SessionInputNoReturnsWindow().ShowDialog();
                                  break;
                              default:
-                                 MessageBox.Show("Wystąpił błąd podczas ładowania słownika.");
+                                 new Views.CustomMessageBoxOk("Wystąpił błąd podczas ładowania słownika.").ShowDialog();
                                  break;
 
                          }

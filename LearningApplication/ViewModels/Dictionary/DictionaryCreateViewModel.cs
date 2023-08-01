@@ -90,7 +90,7 @@ namespace LearningApplication.ViewModels.Dictionary
                              {
                                  if (dictionary.CardStackName.ToLower().Trim() == DictionaryName.ToLower().Trim())
                                  {
-                                     MessageBox.Show("Słownik o takiej nazwie już istnieje", "Błąd podczas dodawania słownika.");
+                                     new Views.CustomMessageBoxOk("Słownik o takiej nazwie już istnieje").ShowDialog();
                                      canCreateDictionary = false;
                                      break;
                                  }
@@ -112,7 +112,7 @@ namespace LearningApplication.ViewModels.Dictionary
                                  }
                                  catch
                                  {
-                                     MessageBox.Show("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później");
+                                     new Views.CustomMessageBoxOk("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później").ShowDialog();
                                      connection.isConnected = false;
                                  }
                                  connection.isConnected = true;
@@ -125,7 +125,7 @@ namespace LearningApplication.ViewModels.Dictionary
                          }
                          else
                          {
-                             MessageBox.Show("Wprowadź nazwę słownika.");
+                             new Views.CustomMessageBoxOk("Wprowadź nazwę słownika.").ShowDialog();
                          }
                      });
                 return createDictionary;

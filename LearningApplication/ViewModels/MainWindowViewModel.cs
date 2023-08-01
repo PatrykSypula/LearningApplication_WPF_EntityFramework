@@ -29,7 +29,7 @@ namespace LearningApplication.ViewModels
             }
             catch
             {
-                MessageBox.Show("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później");
+                new Views.CustomMessageBoxOk("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później").ShowDialog();
                 connection.isConnected = false;
             }
             connection.isConnected = true;

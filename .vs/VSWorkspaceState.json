@@ -2,8 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\LearningApplication",
-    "\\LearningApplication\\ViewModels"
+    "\\LearningApplication\\ViewModels",
+    "\\LearningApplication\\Views",
+    "\\LearningApplication\\Views\\Statistics"
   ],
-  "SelectedNode": "\\LearningApplication.sln",
+  "SelectedNode": "\\LearningApplication\\Views\\Statistics\\StatisticsWindow.xaml",
   "PreviewInSolutionExplorer": false
 }
