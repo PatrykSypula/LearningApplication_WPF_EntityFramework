@@ -56,7 +56,7 @@ namespace LearningApplication.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/LearningApplication;V1.0.0.0;component/views/custommessageboxyesno.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/LearningApplication;component/views/custommessageboxyesno.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\CustomMessageBoxYesNo.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
