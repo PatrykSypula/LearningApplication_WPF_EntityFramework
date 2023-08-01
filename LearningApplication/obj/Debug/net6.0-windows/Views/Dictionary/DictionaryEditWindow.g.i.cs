@@ -58,7 +58,8 @@ namespace LearningApplication.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/LearningApplication;component/views/dictionary/dictionaryeditwindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/LearningApplication;V1.0.0.0;component/views/dictionary/dictionaryeditwindow.xam" +
+                    "l", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Dictionary\DictionaryEditWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

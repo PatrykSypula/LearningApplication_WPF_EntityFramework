@@ -56,7 +56,7 @@ namespace LearningApplication.Views.Statistics {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/LearningApplication;component/views/statistics/statisticswindow.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/LearningApplication;V1.0.0.0;component/views/statistics/statisticswindow.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\..\Views\Statistics\StatisticsWindow.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
