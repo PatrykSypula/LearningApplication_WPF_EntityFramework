@@ -26,13 +26,13 @@ namespace LearningApplication.ViewModels
                     //It is used to execute first query that takes more time so there will not be any long loading windows.
                     context.CardStacks.Where(c => c.Id == 0).AsNoTracking().ToList();
                 }
+                connection.isConnected = true;
             }
             catch
             {
                 new Views.CustomMessageBoxOk("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później").ShowDialog();
                 connection.isConnected = false;
             }
-            connection.isConnected = true;
         }
         #region Commands
 

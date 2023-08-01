@@ -109,13 +109,13 @@ namespace LearningApplication.ViewModels.Dictionary
                                          var dictionaryhelper = ApplicationHelperSingleton.GetSingleton();
                                          dictionaryhelper.cardStacks = SelectedItem;
                                      }
+                                     connection.isConnected = true;
                                  }
                                  catch
                                  {
                                      new Views.CustomMessageBoxOk("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później").ShowDialog();
                                      connection.isConnected = false;
                                  }
-                                 connection.isConnected = true;
                                  foreach (Window item in System.Windows.Application.Current.Windows)
                                  {
                                      if (item.DataContext == this) item.Close();

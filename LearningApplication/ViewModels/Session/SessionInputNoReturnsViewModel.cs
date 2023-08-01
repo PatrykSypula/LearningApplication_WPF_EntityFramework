@@ -209,21 +209,21 @@ namespace LearningApplication.ViewModels.Session
                 ApplicationHelperSingleton connection = ApplicationHelperSingleton.GetSingleton();
                 try
                 {
-                using (var context = new DatabaseContext())
-                {
-                    await context.SessionStatistics.AddAsync(stats);
-                    await context.SaveChangesAsync();
-                }
-                showExitPrompt = false;
-                applicationHelper.sessionStatistics = stats;
-                new StatisticsWindow().ShowDialog();
+                    using (var context = new DatabaseContext())
+                    {
+                        await context.SessionStatistics.AddAsync(stats);
+                        await context.SaveChangesAsync();
+                    }
+                    showExitPrompt = false;
+                    applicationHelper.sessionStatistics = stats;
+                    new StatisticsWindow().ShowDialog();
+                    connection.isConnected = true;
                 }
                 catch
                 {
                     new Views.CustomMessageBoxOk("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później").ShowDialog();
                     connection.isConnected = false;
                 }
-                connection.isConnected = true;
 
                 foreach (Window item in Application.Current.Windows)
                 {

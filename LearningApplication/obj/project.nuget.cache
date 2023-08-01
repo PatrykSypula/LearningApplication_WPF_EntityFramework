@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YQyj2qqeSCqEFORTfFLZGjt8oIak4eAE3Zw941syOoX2Uyydg/dD0OjA7pl9MuAbfV4IFd9fmejBQIncm+Jg/Q==",
+  "dgSpecHash": "N21KzLD7q0wHoE4UhF0vI7T8xarFAzLdz7fnFd53zV49cqtnk0yezmORXSoCz0IH+Aj6Q0X0cjLh/isPoYvt0A==",
   "success": true,
-  "projectFilePath": "C:\\Users\\patry\\Source\\Repos\\PatrykSypula\\LearningApplication_WPF_EntityFramework\\LearningApplication\\LearningApplication.csproj",
+  "projectFilePath": "C:\\Users\\patry\\source\\repos\\PatrykSypula\\LearningApplication_WPF_EntityFramework\\LearningApplication\\LearningApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\patry\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\patry\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

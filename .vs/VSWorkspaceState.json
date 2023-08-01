@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\LearningApplication",
+    "\\LearningApplication\\Views",
+    "\\LearningApplication\\Views\\Dictionary"
   ],
-  "SelectedNode": "\\LearningApplication.sln",
+  "SelectedNode": "\\LearningApplication\\Views\\Dictionary\\DictionaryManagementWindow.xaml.cs",
   "PreviewInSolutionExplorer": false
 }

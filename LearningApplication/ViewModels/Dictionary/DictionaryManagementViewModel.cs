@@ -171,6 +171,7 @@ namespace LearningApplication.ViewModels.Dictionary
                                                  if (item.DataContext == this) item.Close();
                                              }
                                              new CustomMessageBoxOk("Pomyślnie usunięto słownik.").ShowDialog();
+                                             connection.isConnected = true;
                                          }
                                      }
                                      catch
@@ -178,7 +179,6 @@ namespace LearningApplication.ViewModels.Dictionary
                                          new CustomMessageBoxOk("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później").ShowDialog();
                                          connection.isConnected = false;
                                      }
-                                     connection.isConnected = true;
                                  }
                              }
                          }

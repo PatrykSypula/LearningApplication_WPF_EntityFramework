@@ -119,13 +119,13 @@ namespace LearningApplication.ViewModels.Dictionary
                                 }
                                 WordPolishInput = "";
                                 WordTranslatedInput = "";
+                                connection.isConnected = true;
                             }
                             catch
                             {
                                 new Views.CustomMessageBoxOk("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później").ShowDialog();
                                 connection.isConnected = false;
                             }
-                            connection.isConnected = true;
 
                         }
                         else

@@ -244,13 +244,13 @@ namespace LearningApplication.ViewModels.Session
                     showExitPrompt = false;
                     applicationHelper.sessionStatistics = stats;
                     new StatisticsWindow().ShowDialog();
+                    connection.isConnected = true;
                 }
                 catch
                 {
                     new Views.CustomMessageBoxOk("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później").ShowDialog();
                     connection.isConnected = false;
                 }
-                connection.isConnected = true;
 
                 foreach (Window item in System.Windows.Application.Current.Windows)
                 {
