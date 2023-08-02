@@ -247,7 +247,7 @@ namespace LearningApplication.ViewModels.Dictionary
                      {
                          if (WordsList.Count == 0)
                          {
-                             var result = new Views.CustomMessageBoxYesNo("Czy na pewno chcesz wyjść nie dodając żadnego słownicwa? Pusty słownik nie będzie wyświetlany podczas wyboru fiszek do nauki!").ShowDialog();
+                             var result = new Views.CustomMessageBoxYesNo("Czy na pewno chcesz wyjść nie dodając żadnego słownictwa? Pusty słownik nie będzie wyświetlany podczas wyboru fiszek do nauki!").ShowDialog();
                              if ((bool)result)
                              {
                                  foreach (Window item in Application.Current.Windows)

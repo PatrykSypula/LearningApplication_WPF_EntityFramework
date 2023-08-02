@@ -2,9 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\LearningApplication",
+    "\\LearningApplication\\ViewModels",
+    "\\LearningApplication\\ViewModels\\Dictionary",
     "\\LearningApplication\\Views",
     "\\LearningApplication\\Views\\Dictionary"
   ],
-  "SelectedNode": "\\LearningApplication.sln",
+  "SelectedNode": "\\LearningApplication\\ViewModels\\Dictionary\\DictionaryEditViewModel.cs",
   "PreviewInSolutionExplorer": false
 }
