@@ -4,15 +4,15 @@
 winexe
 C#
 .cs
-C:\Users\patry\source\repos\PatrykSypula\LearningApplication_WPF_EntityFramework\LearningApplication\obj\Debug\net6.0-windows\
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication_WPF_EntityFramework\LearningApplication\obj\Debug\net6.0-windows\
 LearningApplication
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\patry\source\repos\PatrykSypula\LearningApplication_WPF_EntityFramework\LearningApplication\App.xaml
+C:\Users\patry\Source\Repos\PatrykSypula\LearningApplication_WPF_EntityFramework\LearningApplication\App.xaml
 132086634976
 1784071228
-41890784991
+42-1311576331
 225-406134218
 Views\CustomMessageBoxOk.xaml;Views\CustomMessageBoxYesNo.xaml;Views\Dictionary\DictionaryCreateWindow.xaml;Views\Dictionary\DictionaryEditWindow.xaml;Views\Dictionary\DictionaryManagementWindow.xaml;Views\MainWindow.xaml;Views\Session\ChooseDictionaryWindow.xaml;Views\Session\SessionInputNoReturnsWindow.xaml;Views\Session\SessionInputWithReturnsWindow.xaml;Views\Session\SessionYesNoWindow.xaml;Views\Statistics\ChooseStatisticDictionaryWindow.xaml;Views\Statistics\StatisticsFromDictionaryWindow.xaml;Views\Statistics\StatisticsWindow.xaml;
 

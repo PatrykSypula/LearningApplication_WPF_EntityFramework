@@ -16,7 +16,7 @@ namespace LearningApplication.ViewModels.Dictionary
     {
         #region Binding and Fields
 
-        Models.Session.ChooseDictionary chooseDictionary = new Models.Session.ChooseDictionary();
+        Models.Dictionary.DictionaryCreate chooseDictionary = new Models.Dictionary.DictionaryCreate();
 
         public List<CardStacks> CardStackList
         {
