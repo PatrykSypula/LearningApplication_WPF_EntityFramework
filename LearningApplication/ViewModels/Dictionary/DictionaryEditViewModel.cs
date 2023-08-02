@@ -146,26 +146,44 @@ namespace LearningApplication.ViewModels.Dictionary
                 if (wordEdit == null) wordEdit = new RelayCommand(
                     (o) =>
                     {
-                        Words word = new Words()
+                        if (WordPolishInput.Trim() != "" && WordTranslatedInput.Trim() != "" && WordPolishInput != null && WordTranslatedInput != null)
                         {
-                            Id = SelectedItem.Id,
-                            WordPolish = WordPolishInput.Trim(),
-                            WordTranslated = WordTranslatedInput.Trim(),
-                            CardStackId = applicationHelper.cardStacks.Id
-
-                        };
-                        using (var context = new DatabaseContext())
-                        {
-                            var index = WordsList.IndexOf(SelectedItem);
-                            if (index >= 0)
+                            ApplicationHelperSingleton connection = ApplicationHelperSingleton.GetSingleton();
+                            try
                             {
-                                WordsList[index] = word;
+                                Words word = new Words()
+                                {
+                                    Id = SelectedItem.Id,
+                                    WordPolish = WordPolishInput.Trim(),
+                                    WordTranslated = WordTranslatedInput.Trim(),
+                                    CardStackId = applicationHelper.cardStacks.Id
+
+                                };
+                                using (var context = new DatabaseContext())
+                                {
+                                    var index = WordsList.IndexOf(SelectedItem);
+                                    if (index >= 0)
+                                    {
+                                        WordsList[index] = word;
+                                    }
+                                    context.Words.Update(word);
+                                    context.SaveChanges();
+                                }
+                                WordPolishInput = "";
+                                WordTranslatedInput = "";
+                                connection.isConnected = true;
                             }
-                            context.Words.Update(word);
-                            context.SaveChanges();
+                            catch
+                            {
+                                new Views.CustomMessageBoxOk("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później").ShowDialog();
+                                connection.isConnected = false;
+                            }
+
                         }
-                        WordPolishInput = "";
-                        WordTranslatedInput = "";
+                        else
+                        {
+                            new Views.CustomMessageBoxOk("Wprowadź poprawne słowo").ShowDialog();
+                        }
                     },
                     (o) =>
                     {
@@ -186,19 +204,29 @@ namespace LearningApplication.ViewModels.Dictionary
                         var result = new Views.CustomMessageBoxYesNo("Czy na pewno chcesz usunąć słowo " + SelectedItem.WordPolish + " - " + SelectedItem.WordTranslated + "? Dokonane zmiany nie mogą zostać cofnięte!").ShowDialog();
                         if ((bool)result)
                         {
-                            Words word = SelectedItem;
-                            using (var context = new DatabaseContext())
+                            ApplicationHelperSingleton connection = ApplicationHelperSingleton.GetSingleton();
+                            try
                             {
-                                var index = WordsList.IndexOf(SelectedItem);
-                                if (index >= 0)
+                                Words word = SelectedItem;
+                                using (var context = new DatabaseContext())
                                 {
-                                    WordsList.RemoveAt(index);
+                                    var index = WordsList.IndexOf(SelectedItem);
+                                    if (index >= 0)
+                                    {
+                                        WordsList.RemoveAt(index);
+                                    }
+                                    context.Words.Remove(word);
+                                    context.SaveChanges();
                                 }
-                                context.Words.Remove(word);
-                                context.SaveChanges();
+                                WordPolishInput = "";
+                                WordTranslatedInput = "";
+                                connection.isConnected = true;
                             }
-                            WordPolishInput = "";
-                            WordTranslatedInput = "";
+                            catch
+                            {
+                                new Views.CustomMessageBoxOk("Wystąpił błąd podczas łączenia z bazą. Spróbuj ponownie później").ShowDialog();
+                                connection.isConnected = false;
+                            }
                         }
                     },
                     (o) =>
