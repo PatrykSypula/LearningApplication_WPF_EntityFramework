@@ -18,6 +18,8 @@ namespace LearningApplication.ViewModels.Dictionary
         public DictionaryEditViewModel()
         {
             WindowName = "Edycja słownika: " + applicationHelper.cardStacks.CardStackName;
+            WordTranslatedInput = "";
+            WordPolishInput = "";
         }
 
         private string windowName;
@@ -133,7 +135,12 @@ namespace LearningApplication.ViewModels.Dictionary
                             new Views.CustomMessageBoxOk("Wprowadź poprawne słowo").ShowDialog();
                         }
 
-                    });
+                    },
+                    (o) =>
+                    {
+                        return WordPolishInput.Trim() != "" && WordTranslatedInput.Trim() != "" && WordPolishInput != null && WordTranslatedInput != null;
+                    }
+                    );
                 return wordAdd;
             }
         }
